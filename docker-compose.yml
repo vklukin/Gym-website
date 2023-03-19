@@ -1,0 +1,67 @@
+version: '3.9'
+
+services:
+  mysqldb:
+    image: mysql:latest
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_DB_PASSWORD
+      - MYSQL_DATABASE=$MYSQL_DB_DATABASE
+    ports:
+      - "3307:3307"
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - backend
+
+  backend:
+    depends_on:
+      - mysqldb
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    ports:
+      - "2000:2000"
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /backend
+    command:
+      - nodemon
+      - backend/server.js
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=$MYSQL_DB_USER
+      - DB_PASSWORD=$MYSQL_DB_PASSWORD
+      - DB_DATABASE=$MYSQL_DB_DATABASE
+      - DB_PORT=$MYSQL_DB_DOCKER_PORT
+    networks:
+      - backend
+      - frontend
+
+  client:
+    depends_on:
+      - backend
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./client
+        target: /client
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
+
+volumes:
+  db:
+
+networks:
+  backend:
+  frontend:

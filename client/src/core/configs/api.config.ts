@@ -1,0 +1,1 @@
+export const ServerURI = 'http://localhost:2000'
