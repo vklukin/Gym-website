@@ -1,0 +1,29 @@
+.main-navigation {
+    margin-bottom: 40px;
+}
+
+.main-navigation .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.main-navigation .nav-wrapper a,
+.main-navigation .nav-wrapper p {
+    font-size: .9em;
+    font-family: Inter-M, sans-serif;
+}
+
+.main-navigation .nav-wrapper a:hover {
+    color: var(--navigation-main-tag-hover);
+}
+
+.main-navigation .nav-wrapper .active-page {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}

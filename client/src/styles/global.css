@@ -1,0 +1,53 @@
+@import url('./variables.css');
+@import url('./fonts.css');
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-family: Inter-B, sans-serif;
+    color: var(--main-font-color);
+}
+
+h3, h4 {
+    font-family: Inter-SB, sans-serif;
+    color: var(--main-font-color);
+}
+
+p, a, input, textarea, button, span, li {
+    font-family: Inter-R, sans-serif;
+    font-size: 1em;
+    color: var(--main-font-color);
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    min-height: 70vh;
+}
+
+.container {
+    width: 1100px;
+
+    margin: 0 auto;
+    display: block;
+}
+
+section {
+    margin-top: 70px;
+}

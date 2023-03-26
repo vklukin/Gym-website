@@ -1,0 +1,30 @@
+:root {
+    /* colors */
+    /* main */
+    --second-color: #f8e71c;
+
+    /* default */
+    --black: #000;
+    --white: #fff;
+    --half-opacity-black: rgba(0, 0, 0, 0.5);
+    --seven-opacity-black: rgba(0, 0, 0, 0.7);
+    --half-opacity-white: rgba(255, 255, 255, 0.5);
+
+    /* background */
+    --main-background-color: #25313b;
+    --header-nav-background-color: #171717;
+    --footer-info-background-color: #171717;
+
+    /* other */
+    --darker-secondary-color: #9d9314;
+    --navigation-main-tag-hover: #8e8308;
+    --gray-color: #a0a0a0;
+
+    /* fonts */
+    --font-color-on-dark-background: #fff;
+    --main-font-color: #0e0a0a;
+    --placeholder-color: #bcbcbc;
+
+    /* borders */
+    --border-radius: 2px;
+}

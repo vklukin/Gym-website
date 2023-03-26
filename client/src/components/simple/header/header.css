@@ -1,0 +1,80 @@
+header {
+    width: 100%;
+    position: relative;
+
+    background-color: var(--main-background-color);
+}
+
+header svg {
+    height: 70px;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 20px 0;
+}
+
+.auxiliary__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.auxiliary__wrapper .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auxiliary__wrapper .info .geo-position,
+.auxiliary__wrapper .info .phone {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.auxiliary__wrapper p,
+.auxiliary__wrapper a,
+nav a {
+    color: var(--font-color-on-dark-background);
+}
+
+.auxiliary__wrapper .profile {
+    color: var(--main-background-color);
+}
+
+
+nav {
+    padding: 10px;
+    width: 100%;
+
+    background-color: var(--header-nav-background-color);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+nav ul li:hover a {
+    color: var(--second-color);
+}
+
+.ham {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+.nav-for-mobile {
+    display: none;
+}

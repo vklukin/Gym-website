@@ -1,0 +1,9 @@
+.index-News h2 {
+    margin-bottom: 20px;
+}
+
+.index-News p a {
+    font-family: Inter-M, sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

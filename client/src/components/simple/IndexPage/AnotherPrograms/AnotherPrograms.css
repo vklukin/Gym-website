@@ -1,0 +1,117 @@
+.index-anotherPrograms {
+    width: 100%;
+}
+
+
+.anotherPrograms__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.container__anotherPrograms .anotherPrograms__item {
+    position: relative;
+    width: 300px;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+.anotherPrograms__label {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container__anotherPrograms .anotherPrograms__item h3,
+.container__anotherPrograms .anotherPrograms__item a,
+.container__anotherPrograms .anotherPrograms__item ul,
+.container__anotherPrograms .anotherPrograms__item ul li {
+    z-index: 20;
+}
+
+.container__anotherPrograms .anotherPrograms__item h3 {
+    color: var(--second-color);
+}
+
+.container__anotherPrograms .anotherPrograms__item ul,
+.container__anotherPrograms .anotherPrograms__item ul li {
+    color: var(--white);
+}
+
+.container__anotherPrograms .anotherPrograms__item img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    object-fit: cover;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.container__anotherPrograms .anotherPrograms__item .img-wrapper {
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+}
+
+.container__anotherPrograms .anotherPrograms__item .img-wrapper::after {
+    position: absolute;
+
+    border-radius: inherit;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    background-color: var(--seven-opacity-black);
+    z-index: 2;
+}
+
+.container__anotherPrograms .anotherPrograms__item ul {
+    height: 180px;
+    width: 100%;
+
+    margin-left: 15px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+
+    list-style-type: '- ';
+}
+
+.container__anotherPrograms .anotherPrograms__item ul li {
+    font-size: .9em;
+
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
