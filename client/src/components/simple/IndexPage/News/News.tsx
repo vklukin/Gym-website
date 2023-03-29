@@ -6,7 +6,8 @@ export function News(): JSX.Element {
             <div className="container">
                 <h2>Новости</h2>
                 <p>
-                    Больше подробностей у нас в <a href="https://vk.com/fitlife_ekb">группе</a>
+                    Все новости у нас в <a href="https://vk.com/fitlife_ekb">группе</a>. Заходи, мы
+                    тебя ждём!
                 </p>
             </div>
         </section>

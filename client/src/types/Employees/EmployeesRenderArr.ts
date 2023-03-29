@@ -5,7 +5,7 @@ export type EmployeesRenderArr = {
     list?: string[];
     extList?: {
         label?: string;
-        itemsList?: string[];
+        itemsList?: string[] | string;
     }[];
 }[];
 
@@ -16,6 +16,6 @@ export type EmployeesRender = {
     list?: string[];
     extList?: {
         label?: string;
-        itemsList?: string[];
+        itemsList?: string[] | string;
     }[];
 };

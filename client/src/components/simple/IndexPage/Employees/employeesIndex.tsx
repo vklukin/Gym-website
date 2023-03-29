@@ -1,4 +1,4 @@
-import './employees.css';
+import './index-employees.css';
 
 import { DynamicRender } from '../../../../types/DynamicRender';
 import { FourEmployeesForIndexPage } from '../../../../pages/Employees';
@@ -9,14 +9,14 @@ import { AnchorButton } from '../../../ui/AnchorButton';
 export function EmployeesIndex(): JSX.Element {
     return (
         <section className="index-employees">
-            <div className="employees-background">
+            <div className="index-employees-background">
                 <img src={Background} alt="" />
             </div>
             <div className="container container__employees">
                 <h2>Наши тренеры</h2>
-                <div className="employee-card__wrapper">
+                <div className="index-employee-card__wrapper">
                     {FourEmployeesForIndexPage.map((item: DynamicRender, index: number) => (
-                        <div className="employee-card">
+                        <div className="index-employee-card" key={index}>
                             <h3>{item.title}</h3>
                             <img src={item.image} alt="Тренер" />
                             <p>{item.text}</p>
@@ -24,7 +24,7 @@ export function EmployeesIndex(): JSX.Element {
                     ))}
                 </div>
                 <AnchorButton
-                    className="employees__button"
+                    className="index-employees__button"
                     text="Больше тренеров"
                     link="/employees"
                 />

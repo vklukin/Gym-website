@@ -6,7 +6,10 @@
     /* default */
     --black: #000;
     --white: #fff;
+
+    /* default with opacity */
     --half-opacity-black: rgba(0, 0, 0, 0.5);
+    --six-opacity-black: rgba(0, 0, 0, 0.6);
     --seven-opacity-black: rgba(0, 0, 0, 0.7);
     --half-opacity-white: rgba(255, 255, 255, 0.5);
 

@@ -4,7 +4,7 @@
     position: relative;
 }
 
-.index-employees .employees-background {
+.index-employees .index-employees-background {
     position: absolute;
     z-index: -2;
 
@@ -14,7 +14,7 @@
     height: 100%;
 }
 
-.index-employees .employees-background::after {
+.index-employees .index-employees-background::after {
     content: '';
 
     position: absolute;
@@ -24,10 +24,10 @@
     width: 100%;
     height: 100%;
 
-    background-color: var(--half-opacity-black);
+    background-color: var(--six-opacity-black);
 }
 
-.index-employees .employees-background img {
+.index-employees .index-employees-background img {
     width: 100%;
     height: 100%;
 
@@ -50,14 +50,14 @@
     color: var(--white);
 }
 
-.index-employees .employee-card__wrapper {
+.index-employees .index-employee-card__wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 420px;
     gap: 20px;
 }
 
-.index-employees .employee-card {
+.index-employees .index-employee-card {
     border-radius: var(--border-radius);
 
     background-color: var(--white);
@@ -71,7 +71,7 @@
     padding: 10px;
 }
 
-.index-employees .employee-card img {
+.index-employees .index-employee-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -80,11 +80,11 @@
     border-radius: var(--border-radius);
 }
 
-.index-employees .employee-card h3 {
+.index-employees .index-employee-card h3 {
     margin-top: 5px;
 }
 
-.index-employees .employee-card p {
+.index-employees .index-employee-card p {
     text-align: center;
     margin-bottom: 5px;
     font-size: .9em;
