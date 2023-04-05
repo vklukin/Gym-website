@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DynamicRender } from '../../types/DynamicRender';
 
-import { HeaderLinks } from './nav.links';
+import { HeaderLinks } from './nav-links.list';
 
 export const Links: React.FC = () => {
     return (

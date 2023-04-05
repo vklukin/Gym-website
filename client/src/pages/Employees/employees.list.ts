@@ -1,4 +1,4 @@
-import { EmployeesRenderArr } from '../../types/Employees';
+import { EmployeesRender } from '../../types/Employees';
 
 import EvgenitaGoyda from '../../assets/images/index/employees/evgeniya_goyda.webp';
 import ElenaDrobysheva from '../../assets/images/index/employees/elena_drobysheva.webp';
@@ -9,7 +9,7 @@ import OksanaKosenok from '../../assets/images/index/employees/oksana_kosenok.we
 import PavelPolenov from '../../assets/images/index/employees/pavel_polenov.webp';
 import VeneraBaltaeva from '../../assets/images/index/employees/venera_baltabaeva.webp';
 
-export const EmployeesArr: EmployeesRenderArr = [
+export const EmployeesArr: EmployeesRender[] = [
     {
         title: 'Маргарита Ионкина',
         text: 'Инструктор зала групповых программ',
@@ -102,7 +102,7 @@ export const EmployeesArr: EmployeesRenderArr = [
     },
 ];
 
-export const FourEmployeesForIndexPage: EmployeesRenderArr = [
+export const FourEmployeesForIndexPage: EmployeesRender[] = [
     {
         title: 'Маргарита Ионкина',
         text: 'Инструктор зала групповых программ',

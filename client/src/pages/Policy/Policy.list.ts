@@ -1,6 +1,6 @@
-import { DynamicRenderArr } from '../../types/DynamicRender';
+import { DynamicRender } from '../../types/DynamicRender';
 
-export const PolicyConfig: DynamicRenderArr = [
+export const PolicyList: DynamicRender[] = [
     {
         title: 'Защита данных',
         text: 'Администрация сайта /  (далее Сайт) не может передать или раскрыть информацию, предоставленную пользователем (далее Пользователь) при регистрации и использовании функций сайта третьим лицам, кроме случаев, описанных законодательством страны, на территории которой пользователь ведет свою деятельность.',

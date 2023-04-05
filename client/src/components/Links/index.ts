@@ -1,2 +1,2 @@
-export * from './nav.links';
+export * from './nav-links.list';
 export { Links } from './Links';

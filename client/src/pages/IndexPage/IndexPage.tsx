@@ -8,7 +8,7 @@ import { AnotherPrograms } from '../../components/simple/IndexPage/AnotherProgra
 import { EmployeesIndex } from '../../components/simple/IndexPage/Employees';
 import { News } from '../../components/simple/IndexPage/News';
 
-const IndexPage: React.FC = () => {
+export const IndexPage: React.FC = () => {
     return (
         <MainTag className="index" pageTitle="Главная" navigation={false} container={false}>
             <>
@@ -20,5 +20,3 @@ const IndexPage: React.FC = () => {
         </MainTag>
     );
 };
-
-export default IndexPage;

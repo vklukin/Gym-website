@@ -1,2 +1,2 @@
-export * from './employees.config';
+export * from './employees.list';
 export * from './Employees';

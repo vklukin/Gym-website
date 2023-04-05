@@ -3,12 +3,12 @@ import './policy.css';
 import { MainTag } from '../../components/ui/Main-Tag';
 
 import { DynamicRender } from '../../types/DynamicRender';
-import { PolicyConfig } from './Policy.config';
+import { PolicyList } from './Policy.list';
 
 function List(): JSX.Element {
     return (
         <ul className="policy-list">
-            {PolicyConfig.map((item: DynamicRender, index: number) => (
+            {PolicyList.map((item: DynamicRender, index: number) => (
                 <li key={index}>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
@@ -18,7 +18,7 @@ function List(): JSX.Element {
     );
 }
 
-function Policy(): JSX.Element {
+export function Policy(): JSX.Element {
     return (
         <MainTag className="policy" pageTitle="Политика конфиденциальности">
             <>
@@ -31,5 +31,3 @@ function Policy(): JSX.Element {
         </MainTag>
     );
 }
-
-export default Policy;

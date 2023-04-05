@@ -1,2 +1,2 @@
 export * from './Policy';
-export * from './Policy.config';
+export * from './Policy.list';

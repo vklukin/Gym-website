@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import './slider.css';
 
 import { DynamicRender } from '../../../../types/DynamicRender';
-import { SliderArr } from '../Index.data';
+import { SliderArr } from '../Index-data.list';
 import { SliderItem } from '../../../ui/SliderItems';
 
 export function Slider(): JSX.Element {

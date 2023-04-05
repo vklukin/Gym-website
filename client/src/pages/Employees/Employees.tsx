@@ -3,7 +3,7 @@ import './employees.css';
 import { EmployeesRender } from '../../types/Employees';
 
 import { MainTag } from '../../components/ui/Main-Tag';
-import { EmployeesArr } from './employees.config';
+import { EmployeesArr } from './employees.list';
 
 export function Employees(): JSX.Element {
     return (
@@ -17,18 +17,21 @@ export function Employees(): JSX.Element {
                                 <p>{items.text}</p>
                             </div>
                             {items.list && (
-                                <ul className="employee__default-list">
+                                <ul className="employee__default-list" key={index + 1000}>
                                     {items.list.map((listItem, listIndex) => (
                                         <li key={listIndex}>{listItem}</li>
                                     ))}
                                 </ul>
                             )}
                             {items.extList && (
-                                <div className="employee-ext-list__wrapper">
+                                <div className="employee-ext-list__wrapper" key={index + 2000}>
                                     {items.extList.map((extListItem, extListIndex) => (
-                                        <>
+                                        <div key={extListIndex + 9999}>
                                             {extListItem.label && (
-                                                <p className="employee__ext-list-label">
+                                                <p
+                                                    className="employee__ext-list-label"
+                                                    key={extListIndex + 1000}
+                                                >
                                                     {extListItem.label}
                                                 </p>
                                             )}
@@ -44,11 +47,14 @@ export function Employees(): JSX.Element {
                                                     )}
                                                 </ul>
                                             ) : (
-                                                <p className="employee__extList-text">
+                                                <p
+                                                    className="employee__extList-text"
+                                                    key={extListIndex + 2000}
+                                                >
                                                     {extListItem.itemsList}
                                                 </p>
                                             )}
-                                        </>
+                                        </div>
                                     ))}
                                 </div>
                             )}

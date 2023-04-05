@@ -1,4 +1,4 @@
-export type EmployeesRenderArr = {
+export interface EmployeesRender {
     title: string;
     text: string;
     image: string;
@@ -7,15 +7,4 @@ export type EmployeesRenderArr = {
         label?: string;
         itemsList?: string[] | string;
     }[];
-}[];
-
-export type EmployeesRender = {
-    title: string;
-    text: string;
-    image: string;
-    list?: string[];
-    extList?: {
-        label?: string;
-        itemsList?: string[] | string;
-    }[];
-};
+}

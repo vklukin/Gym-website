@@ -2,7 +2,7 @@ import './AnotherPrograms.css';
 
 import { DynamicRender } from '../../../../types/DynamicRender';
 
-import { AnotherProgramsArr } from '../Index.data';
+import { AnotherProgramsArr } from '../Index-data.list';
 import { AnchorButton } from '../../../ui/AnchorButton';
 
 export function AnotherPrograms(): JSX.Element {

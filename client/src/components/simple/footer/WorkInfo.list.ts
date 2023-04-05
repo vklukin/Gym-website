@@ -2,9 +2,9 @@ import GeoMark from '../../../assets/images/icons/nav-marker-white.png';
 import Phone from '../../../assets/images/icons/phone-white.png';
 import Clock from '../../../assets/images/icons/clock-white.png';
 
-import { DynamicRenderArr } from '../../../types/DynamicRender';
+import { DynamicRender } from '../../../types/DynamicRender';
 
-export const WorkInfo: DynamicRenderArr = [
+export const WorkInfo: DynamicRender[] = [
     {
         image: GeoMark,
         title: 'Адрес',

@@ -1,2 +1,2 @@
 export { Footer } from './Footer';
-export { WorkInfo } from './WorkInfo.config';
+export { WorkInfo } from './WorkInfo.list';

@@ -1,4 +1,4 @@
-import { DynamicRenderArr } from '../../../types/DynamicRender';
+import { DynamicRender } from '../../../types/DynamicRender';
 
 //slider
 import SliderImage1 from '../../../assets/images/index/slider/slider1.jpg';
@@ -10,7 +10,7 @@ import GymImage from '../../../assets/images/index/another-programs/gym-image.we
 import AerobicImage from '../../../assets/images/index/another-programs/aerobic-image.webp';
 import MassageImage from '../../../assets/images/index/another-programs/massage-image.webp';
 
-export const SliderArr: DynamicRenderArr = [
+export const SliderArr: DynamicRender[] = [
     {
         title: 'Бесплатный тест-драйв клуба',
         text: 'Приходите к нам на тест-драйв и получите дополнительные 10% скидки и персональную тренировку с тренером',
@@ -28,7 +28,7 @@ export const SliderArr: DynamicRenderArr = [
     },
 ];
 
-export const AnotherProgramsArr: DynamicRenderArr = [
+export const AnotherProgramsArr: DynamicRender[] = [
     {
         title: 'Тренажерный зал',
         list: [

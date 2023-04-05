@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DynamicRender } from '../../../../types/DynamicRender';
 
-import { WorkInfo } from '../WorkInfo.config';
+import { WorkInfo } from '../WorkInfo.list';
 
 export const FooterInfoList: React.FC = () => {
     return (
