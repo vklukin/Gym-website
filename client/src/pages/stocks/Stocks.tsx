@@ -6,9 +6,8 @@ import { DynamicRender } from '../../types/DynamicRender';
 import React, { Component, createRef } from 'react';
 
 type Props = { items: DynamicRender };
-type State = { isHide: boolean };
 
-class StockItem extends Component<Props, State> {
+class StockItem extends Component<Props, any> {
     private readonly imgRef: React.RefObject<HTMLImageElement> = createRef();
 
     constructor(props: Props) {

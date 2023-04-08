@@ -9,6 +9,7 @@ import { Employees } from '../pages/Employees';
 import { Stocks } from '../pages/stocks';
 import { Gym } from '../pages/Gym';
 import { Aerobics } from '../pages/Aerobics';
+import { Massage } from '../pages/Massage';
 
 export const Router: React.FC = () => {
     return (
@@ -21,6 +22,7 @@ export const Router: React.FC = () => {
                 <Route path="/stocks" element={<Stocks />} />
                 <Route path="/gym" element={<Gym />} />
                 <Route path="/aerobics" element={<Aerobics />} />
+                <Route path="/massage" element={<Massage />} />
             </Routes>
             <Footer />
         </>
