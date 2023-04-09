@@ -1,0 +1,39 @@
+.price .heading {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.price .heading a {
+    font-family: Inter-SB, sans-serif;
+}
+
+.price table {
+    border-collapse: collapse;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+}
+
+.price table,
+.price table th,
+.price table td {
+    border: 1px solid var(--main-background-color);
+}
+
+.price table th,
+.price table td {
+    padding: 5px;
+}
+
+.price table td.line-label {
+    font-family: Inter-SB, sans-serif;
+    text-transform: uppercase;
+    background-color: var(--second-color);
+}
+
+.price table td.line-price {
+    text-align: center;
+}
+
+.price table td.line-period {
+    text-align: center;
+}

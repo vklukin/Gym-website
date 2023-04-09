@@ -10,6 +10,8 @@ import { Stocks } from '../pages/stocks';
 import { Gym } from '../pages/Gym';
 import { Aerobics } from '../pages/Aerobics';
 import { Massage } from '../pages/Massage';
+import { Price } from '../pages/Price';
+import { Contacts } from '../pages/Contacts';
 
 export const Router: React.FC = () => {
     return (
@@ -23,6 +25,8 @@ export const Router: React.FC = () => {
                 <Route path="/gym" element={<Gym />} />
                 <Route path="/aerobics" element={<Aerobics />} />
                 <Route path="/massage" element={<Massage />} />
+                <Route path="/price" element={<Price />} />
+                <Route path="/contacts" element={<Contacts />} />
             </Routes>
             <Footer />
         </>

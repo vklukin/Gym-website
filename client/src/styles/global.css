@@ -20,7 +20,7 @@ h1, h2 {
     color: var(--main-font-color);
 }
 
-h3, h4 {
+h3, h4, th {
     font-family: Inter-SB, sans-serif;
     color: var(--main-font-color);
 }
@@ -41,7 +41,7 @@ h4 {
     font-size: 1em;
 }
 
-p, a, input, textarea, button, span, li {
+p, a, input, textarea, button, span, li, td {
     font-family: Inter-R, sans-serif;
     font-size: 1em;
     color: var(--main-font-color);
