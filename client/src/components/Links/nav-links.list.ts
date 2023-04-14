@@ -22,10 +22,6 @@ export const HeaderLinks: DynamicRender[] = [
         link: '/employees',
     },
     {
-        title: 'Вакансии',
-        link: '/vacancy',
-    },
-    {
         title: 'Контакты',
         link: '/contacts',
     },

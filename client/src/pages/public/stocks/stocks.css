@@ -1,0 +1,53 @@
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 510px);
+    grid-template-rows: repeat(auto-fill, 510px);
+
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.grid-wrapper .stocks-card img {
+    width: 100%;
+    z-index: 3;
+    position: relative;
+
+    transition: .3s all ease-in;
+}
+
+.grid-wrapper .stocks-card {
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.grid-wrapper .stocks-card .stock-text {
+    background-color: var(--main-background-color);
+    border: 4px solid var(--second-color);
+
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+}
+
+.grid-wrapper .stocks-card img.hide-image {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.grid-wrapper .stocks-card .stock-text ul li,
+.grid-wrapper .stocks-card .stock-text p {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.grid-wrapper .stocks-card .stock-text h3 {
+    color: var(--second-color);
+    margin-bottom: 30px;
+}

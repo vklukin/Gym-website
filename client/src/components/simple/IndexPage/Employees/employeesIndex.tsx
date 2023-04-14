@@ -1,7 +1,7 @@
 import './index-employees.css';
 
 import { DynamicRender } from '../../../../types/DynamicRender';
-import { FourEmployeesForIndexPage } from '../../../../pages/Employees';
+import { FourEmployeesForIndexPage } from '../../../../pages/public/Employees';
 
 import Background from '../../../../assets/images/index/employees/background-employees.jpg';
 import { AnchorButton } from '../../../ui/AnchorButton';

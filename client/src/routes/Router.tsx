@@ -3,15 +3,16 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Header } from '../components/simple/header';
 import { Footer } from '../components/simple/footer';
-import { IndexPage } from '../pages/IndexPage';
-import { Policy } from '../pages/Policy';
-import { Employees } from '../pages/Employees';
-import { Stocks } from '../pages/stocks';
-import { Gym } from '../pages/Gym';
-import { Aerobics } from '../pages/Aerobics';
-import { Massage } from '../pages/Massage';
-import { Price } from '../pages/Price';
-import { Contacts } from '../pages/Contacts';
+import { IndexPage } from '../pages/public/IndexPage';
+import { Policy } from '../pages/public/Policy';
+import { Employees } from '../pages/public/Employees';
+import { Stocks } from '../pages/public/stocks';
+import { Gym } from '../pages/public/Gym';
+import { Aerobics } from '../pages/public/Aerobics';
+import { Massage } from '../pages/public/Massage';
+import { Price } from '../pages/public/Price';
+import { Contacts } from '../pages/public/Contacts';
+import { Schedule } from '../pages/public/Schedule';
 
 export const Router: React.FC = () => {
     return (
@@ -27,6 +28,7 @@ export const Router: React.FC = () => {
                 <Route path="/massage" element={<Massage />} />
                 <Route path="/price" element={<Price />} />
                 <Route path="/contacts" element={<Contacts />} />
+                <Route path="/schedule" element={<Schedule />} />
             </Routes>
             <Footer />
         </>

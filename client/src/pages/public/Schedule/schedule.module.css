@@ -1,0 +1,57 @@
+.scheduleRendering {
+    margin-top: 0 !important;
+}
+
+.weeks_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 20px;
+}
+
+.weeks_list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.workoutTrainer:hover a {
+    color: var(--darker-secondary-color);
+}
+
+.canChangeInfo {
+    margin-bottom: 10px;
+}
+
+.canChangeMark {
+    color: var(--main-font-color);
+    font-family: Inter-SB, sans-serif;
+    font-size: .9em;
+}
+
+.trainingDescription h2 {
+    margin-bottom: 20px;
+}
+
+.trainingElement h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.trainingElement:first-child h3 {
+    margin-top: 0;
+}
+
+.trainingDescription__wrapper p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.dropDownMenu_descriptions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}

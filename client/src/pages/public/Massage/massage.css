@@ -1,0 +1,20 @@
+.massage {
+    min-height: auto !important;
+}
+
+.massage .phone {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.massage .dropdown-content img {
+    width: 300px;
+}
+
+.massage .dropdown-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 50px;
+}

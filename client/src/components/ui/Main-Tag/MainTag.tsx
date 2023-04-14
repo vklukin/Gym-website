@@ -1,7 +1,7 @@
 import './MainTag.css';
 
 interface Childrens {
-    children?: JSX.Element;
+    children?: JSX.Element | JSX.Element[];
     pageTitle: string;
     className: string;
     container?: boolean;

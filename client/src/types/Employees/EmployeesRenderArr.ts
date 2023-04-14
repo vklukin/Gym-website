@@ -3,6 +3,7 @@ export interface EmployeesRender {
     text: string;
     image: string;
     list?: string[];
+    id?: string;
     extList?: {
         label?: string;
         itemsList?: string[] | string;
