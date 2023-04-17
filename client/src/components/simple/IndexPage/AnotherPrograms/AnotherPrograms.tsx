@@ -3,7 +3,7 @@ import './AnotherPrograms.css';
 import { DynamicRender } from '../../../../types/DynamicRender';
 
 import { AnotherProgramsArr } from '../Index-data.list';
-import { AnchorButton } from '../../../ui/AnchorButton';
+import { Button } from '../../../ui/Button';
 
 export function AnotherPrograms(): JSX.Element {
     return (
@@ -24,7 +24,9 @@ export function AnotherPrograms(): JSX.Element {
                                     <li key={listIndex}>{listItem}</li>
                                 ))}
                             </ul>
-                            <AnchorButton link={item.link} text="Подробнее" />
+                            <Button as={'a'} href={item.link}>
+                                Подробнее
+                            </Button>
                         </div>
                     ))}
                 </div>

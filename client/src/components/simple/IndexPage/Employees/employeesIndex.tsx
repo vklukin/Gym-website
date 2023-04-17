@@ -4,7 +4,7 @@ import { DynamicRender } from '../../../../types/DynamicRender';
 import { FourEmployeesForIndexPage } from '../../../../pages/public/Employees';
 
 import Background from '../../../../assets/images/index/employees/background-employees.jpg';
-import { AnchorButton } from '../../../ui/AnchorButton';
+import { Button } from '../../../ui/Button';
 
 export function EmployeesIndex(): JSX.Element {
     return (
@@ -23,11 +23,9 @@ export function EmployeesIndex(): JSX.Element {
                         </div>
                     ))}
                 </div>
-                <AnchorButton
-                    className="index-employees__button"
-                    text="Больше тренеров"
-                    link="/employees"
-                />
+                <Button as={'a'} href={'/employees'} className={'index-employees__button'}>
+                    Больше тренеров
+                </Button>
             </div>
         </section>
     );

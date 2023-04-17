@@ -1,0 +1,79 @@
+.login {
+    min-height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form {
+    width: 400px;
+    padding: 30px;
+
+    border: 1px solid var(--half-opacity-black);
+    border-radius: var(--border-radius);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.inputInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    user-select: none;
+}
+
+.showPasswordButton {
+    font-size: .8em;
+
+    cursor: pointer;
+}
+
+.inputs {
+    gap: 15px;
+}
+
+.inputs, .input_email, .input_password {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_email, .input_password {
+    gap: 5px;
+}
+
+.inputs, .input_email, .input_password, .inputs input {
+    width: 100%;
+}
+
+.inputs input {
+    border: 2px solid var(--main-font-color);
+    border-radius: var(--border-radius);
+
+    outline: none;
+
+    padding: 5px 10px;
+}
+
+.inputs input:focus {
+    border-color: var(--darker-secondary-color);
+}
+
+.auth_button {
+    width: 70%;
+    cursor: pointer;
+}
+
+.auth_button:hover {
+    color: var(--main-font-color);
+}

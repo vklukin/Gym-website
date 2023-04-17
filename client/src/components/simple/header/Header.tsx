@@ -7,7 +7,7 @@ import NavMarker from '../../../assets/images/icons/nav-marker-white.png';
 
 import { Logo } from '../../ui/Logo';
 import { Links } from '../../Links';
-import { AnchorButton } from '../../ui/AnchorButton';
+import { Button } from '../../ui/Button';
 
 export const Header: React.FC = () => {
     return (
@@ -28,7 +28,9 @@ export const Header: React.FC = () => {
                                 &nbsp;<a href="tel:+73432435342">+7 (343) 243-53-42</a>
                             </span>
                         </div>
-                        <AnchorButton link="/profile" className="profile" text="Личный кабинет" />
+                        <Button as={'a'} href="/profile" className="profile">
+                            Личный кабинет
+                        </Button>
                     </div>
                 </div>
             </div>

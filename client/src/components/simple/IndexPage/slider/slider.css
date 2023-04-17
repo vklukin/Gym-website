@@ -109,16 +109,17 @@
     flex-direction: column;
 
     gap: 30px;
+    margin-top: -100px;
 }
 
 .index-slider .slider__items .slide-2 .slider__text-wrapper {
     margin-left: -600px;
-    margin-top: -100px;
 
     align-items: flex-start;
 }
 
-.index-slider .slider__items .slide-2 .slider__text-wrapper p {
+.index-slider .slider__items .slide-2 .slider__text-wrapper p,
+.index-slider .slider__items .slide-3 .slider__text-wrapper p {
     width: auto;
 }
 

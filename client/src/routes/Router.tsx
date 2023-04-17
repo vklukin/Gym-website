@@ -13,12 +13,15 @@ import { Massage } from '../pages/public/Massage';
 import { Price } from '../pages/public/Price';
 import { Contacts } from '../pages/public/Contacts';
 import { Schedule } from '../pages/public/Schedule';
+import { Profile } from '../pages/private/Profile';
+import { Login } from '../pages/public/Login';
 
 export const Router: React.FC = () => {
     return (
         <>
             <Header />
             <Routes>
+                {/* Public */}
                 <Route path="/" element={<IndexPage />} />
                 <Route path="/policy" element={<Policy />} />
                 <Route path="/employees" element={<Employees />} />
@@ -29,6 +32,10 @@ export const Router: React.FC = () => {
                 <Route path="/price" element={<Price />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/schedule" element={<Schedule />} />
+                <Route path="/authorization" element={<Login />} />
+
+                {/* private */}
+                <Route path="/profile" element={<Profile />} />
             </Routes>
             <Footer />
         </>

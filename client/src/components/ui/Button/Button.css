@@ -1,0 +1,21 @@
+.anchor-button {
+    font-family: Inter-SB, sans-serif;
+    color: var(--main-font-color);
+
+    padding: 10px 30px;
+
+    border-radius: var(--border-radius);
+    border: 2px solid var(--second-color);
+    background-color: var(--second-color);
+
+    transition: background-color 0.1s ease-in, color .1s ease-in;
+}
+
+.anchor-button:hover {
+    background: none;
+    color: var(--font-color-on-dark-background);
+}
+
+.anchor-button:active {
+    border-color: var(--darker-secondary-color);
+}

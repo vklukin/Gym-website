@@ -2,7 +2,7 @@ import './MainTag.css';
 
 interface Childrens {
     children?: JSX.Element | JSX.Element[];
-    pageTitle: string;
+    pageTitle?: string;
     className: string;
     container?: boolean;
     navigation?: boolean;
