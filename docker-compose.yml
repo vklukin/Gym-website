@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   mysqldb:
+    container_name: workout-db
     image: mysql:latest
     restart: unless-stopped
     env_file:
@@ -10,7 +11,7 @@ services:
       - MYSQL_ROOT_PASSWORD=$MYSQL_DB_PASSWORD
       - MYSQL_DATABASE=$MYSQL_DB_DATABASE
     ports:
-      - "3307:3307"
+      - "3306:3306"
     volumes:
       - db:/var/lib/mysql
     networks:
