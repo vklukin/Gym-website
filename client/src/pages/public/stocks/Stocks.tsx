@@ -46,7 +46,7 @@ export function Stocks(): JSX.Element {
     return (
         <MainTag pageTitle="Акции" className="stocks">
             <div className="grid-wrapper">
-                {StocksList.map((items: DynamicRender, index: number) => (
+                {StocksList.map((items, index: number) => (
                     <StockItem items={items} key={index} />
                 ))}
             </div>

@@ -2,13 +2,12 @@ import './policy.css';
 
 import { MainTag } from '../../../components/ui/Main-Tag';
 
-import { DynamicRender } from '../../../types/DynamicRender';
 import { PolicyList } from './Policy.list';
 
 function List(): JSX.Element {
     return (
         <ul className="policy-list">
-            {PolicyList.map((item: DynamicRender, index: number) => (
+            {PolicyList.map((item, index: number) => (
                 <li key={index}>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>

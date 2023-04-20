@@ -29,10 +29,8 @@ services:
     ports:
       - "2000:2000"
     volumes:
-      - ./backend/node_modules:/backend/node_modules
-      - type: bind
-        source: ./backend
-        target: /backend
+      - /backend/node_modules
+      - ./backend:/backend
     environment:
       - DB_HOST=mysqldb
       - DB_USER=$MYSQL_DB_USER

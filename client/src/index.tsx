@@ -7,13 +7,13 @@ import { Provider } from 'react-redux';
 import './styles/global.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import store from './store';
+import Store from './store/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <Provider store={store}>
-        <BrowserRouter>
+    <BrowserRouter>
+        <Provider store={Store}>
             <App />
-        </BrowserRouter>
-    </Provider>
+        </Provider>
+    </BrowserRouter>
 );

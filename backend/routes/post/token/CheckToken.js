@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const GenerateTokens = require("../../../app/utilities/tokens/GenerateTokens");
 const { ROLE_NAMES } = require("../../../app/constants/RoleConstant");
+const Logout = require("../auth/Logout");
 
 module.exports = (app) => {
   app.post("/api/token/check", (req, res) => {
@@ -17,6 +18,7 @@ module.exports = (app) => {
           jwt.verify(RToken, process.env.SECRET_KEY, (err, dec) => {
             if (err) {
               if (err.message === "jwt expired") {
+                Logout(app);
                 return res.status(401).json({
                   message: "Требуется авторизация",
                 });

@@ -8,8 +8,10 @@ import NavMarker from '../../../assets/images/icons/nav-marker-white.png';
 import { Logo } from '../../ui/Logo';
 import { Links } from '../../Links';
 import { Button } from '../../ui/Button';
+import { useAppSelector } from '../../../store/ReduxHooks';
 
 export const Header: React.FC = () => {
+    const { isAuth, id, role } = useAppSelector((state) => state.Auth.user);
     return (
         <header>
             <div className="container">
@@ -28,7 +30,11 @@ export const Header: React.FC = () => {
                                 &nbsp;<a href="tel:+73432435342">+7 (343) 243-53-42</a>
                             </span>
                         </div>
-                        <Button as={'a'} href="/profile" className="profile">
+                        <Button
+                            as={'a'}
+                            href={isAuth ? `/${id}/profile` : '/authorization'}
+                            className="profile"
+                        >
                             Личный кабинет
                         </Button>
                     </div>

@@ -1,7 +1,5 @@
 import './AnotherPrograms.css';
 
-import { DynamicRender } from '../../../../types/DynamicRender';
-
 import { AnotherProgramsArr } from '../Index-data.list';
 import { Button } from '../../../ui/Button';
 
@@ -13,7 +11,7 @@ export function AnotherPrograms(): JSX.Element {
                     Всё для Вашего отдыха, красоты и здоровья. Приходите и попробуйте!
                 </h3>
                 <div className="anotherPrograms__wrapper">
-                    {AnotherProgramsArr.map((item: DynamicRender, index: number) => (
+                    {AnotherProgramsArr.map((item, index: number) => (
                         <div className="anotherPrograms__item" key={index}>
                             <h3>{item.title}</h3>
                             <div className="img-wrapper">

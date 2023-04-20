@@ -2,7 +2,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-const UserLogin = require("./post/auth/User");
+const UserLogin = require("./post/auth/Login");
 const Logout = require("./post/auth/Logout");
 const CheckToken = require("./post/token/CheckToken");
 

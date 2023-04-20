@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 import './slider.css';
 
-import { DynamicRender } from '../../../../types/DynamicRender';
 import { SliderArr } from '../Index-data.list';
 import { SliderItem } from '../../../ui/SliderItems';
 
@@ -42,7 +41,7 @@ export function Slider(): JSX.Element {
         <div className="index-slider">
             <div className="slider__wrapper">
                 <div className="slider__items" ref={sliderItemsRef}>
-                    {SliderArr.map((item: DynamicRender, index: number) => (
+                    {SliderArr.map((item, index: number) => (
                         <SliderItem
                             key={index}
                             keys={index}

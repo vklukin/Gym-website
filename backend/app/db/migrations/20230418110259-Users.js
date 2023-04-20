@@ -19,6 +19,10 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       role_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

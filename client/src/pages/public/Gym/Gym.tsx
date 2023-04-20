@@ -2,12 +2,11 @@ import './gym.css';
 
 import { MainTag } from '../../../components/ui/Main-Tag';
 import { GymImages, GymList } from './Gym.list';
-import { DynamicRender } from '../../../types/DynamicRender';
 
 function GymInfo(): JSX.Element {
     return (
         <div className="gym__info">
-            {GymList.map((items: DynamicRender, index: number) => (
+            {GymList.map((items, index: number) => (
                 <div key={index}>
                     <h3>{items.title}</h3>
                     <p>{items.text}</p>

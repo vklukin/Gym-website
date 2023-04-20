@@ -17,14 +17,14 @@ footer {
 }
 
 .footer-info iframe {
-    flex: 1;
+    width: 50%;
 
     border: none;
     height: 100%;
 }
 
 .footer-contacts {
-    flex: 1;
+    width: 50%;
 
     background-color: var(--footer-info-background-color);
     padding: 40px;

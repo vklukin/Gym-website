@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import './employees.css';
 
-import { EmployeesRender } from '../../../types/Employees';
+import { EmployeesRender } from '../../../types/EmployeesRenderArr';
 import { MainTag } from '../../../components/ui/Main-Tag';
 import { EmployeesArr } from './employees.list';
 

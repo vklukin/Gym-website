@@ -1,8 +1,5 @@
 import './index-employees.css';
-
-import { DynamicRender } from '../../../../types/DynamicRender';
 import { FourEmployeesForIndexPage } from '../../../../pages/public/Employees';
-
 import Background from '../../../../assets/images/index/employees/background-employees.jpg';
 import { Button } from '../../../ui/Button';
 
@@ -15,7 +12,7 @@ export function EmployeesIndex(): JSX.Element {
             <div className="container container__employees">
                 <h2>Наши тренеры</h2>
                 <div className="index-employee-card__wrapper">
-                    {FourEmployeesForIndexPage.map((item: DynamicRender, index: number) => (
+                    {FourEmployeesForIndexPage.map((item, index: number) => (
                         <div className="index-employee-card" key={index}>
                             <h3>{item.title}</h3>
                             <img src={item.image} alt="Тренер" />

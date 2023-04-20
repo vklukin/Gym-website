@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { DynamicRender } from '../../../../types/DynamicRender';
-
 import { WorkInfo } from '../WorkInfo.list';
 
 export const FooterInfoList: React.FC = () => {
     return (
         <ul>
-            {WorkInfo.map((item: DynamicRender, index: number) => (
+            {WorkInfo.map((item, index: number) => (
                 <li key={index}>
                     <img src={item.image} alt="Иконка" />
                     <div className="wrapper">

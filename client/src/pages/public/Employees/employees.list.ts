@@ -1,4 +1,4 @@
-import { EmployeesRender } from '../../../types/Employees';
+import { EmployeesRender } from '../../../types/EmployeesRenderArr';
 
 import EvgenitaGoyda from '../../../assets/images/index/employees/evgeniya_goyda.webp';
 import ElenaDrobysheva from '../../../assets/images/index/employees/elena_drobysheva.webp';
