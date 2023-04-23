@@ -1,0 +1,15 @@
+.private_panel {
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+
+    margin: 50px auto;
+    padding: 0 30px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+

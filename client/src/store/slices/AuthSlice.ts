@@ -43,7 +43,7 @@ export const checkToken = createAsyncThunk<TUserParams, undefined, { rejectValue
             const response = await Api.post(`${ServerURI}/api/token/check`, _, {
                 withCredentials: true,
             });
-            console.log(1);
+
             return await response.data;
         } catch (e) {
             return rejectWithValue(`Server error. ${e}`);
@@ -84,7 +84,7 @@ const authSlice = createSlice({
                 state.user = action.payload;
                 state.user.isAuth = true;
                 state.isLoading = false;
-                window.sessionStorage.setItem('Auth-Session', JSON.stringify(action.payload));
+                window.localStorage.setItem('Auth-Session', JSON.stringify(action.payload));
             })
             .addCase(authorize.rejected, (state, action) => {
                 state.isLoading = false;
@@ -99,12 +99,12 @@ const authSlice = createSlice({
                 state.user = action.payload;
                 state.user.isAuth = true;
                 state.isLoading = false;
-                window.sessionStorage.setItem('Auth-Session', JSON.stringify(action.payload));
+                window.localStorage.setItem('Auth-Session', JSON.stringify(action.payload));
             })
             .addCase(checkToken.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-                window.sessionStorage.removeItem('Auth-Session');
+                window.localStorage.removeItem('Auth-Session');
                 console.log(state.error);
             })
             .addCase(logout.pending, (state) => {
@@ -114,7 +114,7 @@ const authSlice = createSlice({
             .addCase(logout.fulfilled, (state) => {
                 state.isLoading = false;
                 state.user = initialState.user;
-                window.sessionStorage.removeItem('Auth-Session');
+                window.localStorage.removeItem('Auth-Session');
             })
             .addCase(logout.rejected, (state, action) => {
                 state.isLoading = false;

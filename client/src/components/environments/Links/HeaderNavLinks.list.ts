@@ -1,6 +1,6 @@
-import { DynamicRender } from '../../types/DynamicRender';
+import { TLinks } from '../../../types/TLinks';
 
-export const HeaderLinks: DynamicRender[] = [
+export const HeaderLinks: TLinks[] = [
     {
         title: 'Главная',
         link: '/',

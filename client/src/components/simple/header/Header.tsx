@@ -1,17 +1,17 @@
 import React from 'react';
+import { useAppSelector } from '../../../store/ReduxHooks';
 
 import './header.css';
-
 import PhoneIcon from '../../../assets/images/icons/phone-white.png';
 import NavMarker from '../../../assets/images/icons/nav-marker-white.png';
 
+import { HeaderLinks } from '../../environments/Links';
 import { Logo } from '../../ui/Logo';
-import { Links } from '../../Links';
 import { Button } from '../../ui/Button';
-import { useAppSelector } from '../../../store/ReduxHooks';
+import { Links } from '../../ui/Links';
 
 export const Header: React.FC = () => {
-    const { isAuth, id, role } = useAppSelector((state) => state.Auth.user);
+    const { isAuth, id } = useAppSelector((state) => state.Auth.user);
     return (
         <header>
             <div className="container">
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
             </div>
             <nav className="nav-for-desktop">
                 <div className="container">
-                    <Links />
+                    <Links linksArray={HeaderLinks} />
                 </div>
             </nav>
         </header>

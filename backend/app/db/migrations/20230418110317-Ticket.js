@@ -11,10 +11,6 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      ticket_value: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
       ticket_rate: {
         type: DataTypes.STRING,
         allowNull: false,

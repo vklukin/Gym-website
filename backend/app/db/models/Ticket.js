@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 const Ticket = (sequelize) => {
   return sequelize.define("ticket", {
-    id: {
+    ticket_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

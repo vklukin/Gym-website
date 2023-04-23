@@ -45,17 +45,15 @@ module.exports = (app) => {
         candidate.id,
         candidate.name,
         candidate.email,
-        candidate.createAt,
         candidate.role_id,
-        candidate.ticket_id
+        candidate.createAt,
       );
       const refreshToken = GenerateTokens.refreshToken(
         candidate.id,
         candidate.name,
         candidate.email,
-        candidate.createAt,
         candidate.role_id,
-        candidate.ticket_id
+        candidate.createAt,
       );
       res.cookie("AToken", accessToken, { httpOnly: true });
       res.cookie("RToken", refreshToken, { httpOnly: true });
@@ -64,11 +62,11 @@ module.exports = (app) => {
         id: candidate.id,
         name: candidate.name,
         email: candidate.email,
-        createAt: candidate.createAt,
         role: ROLE_NAMES[candidate.role_id],
+        createAt: candidate.createAt,
         ticket: ticket
           ? {
-              ticket_id: ticket.id,
+              ticket_id: ticket.ticket_id,
               ticket_rate: ticket.ticket_rate,
               start_period: ticket.start_period,
               end_period: ticket.end_period,

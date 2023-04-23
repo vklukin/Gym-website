@@ -1,18 +1,19 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAppSelector } from '../../../store/ReduxHooks';
 
 type TAllowedRoles = { allowedRoles: string[] };
 
 const PrivateRoute = ({ allowedRoles }: TAllowedRoles): JSX.Element => {
-    const { isAuth, id, role } = useAppSelector((state) => state.Auth.user);
+    const session = JSON.parse(window.localStorage.getItem('Auth-Session') as string);
     const location = useLocation();
 
-    return !isAuth ? (
+    return !session?.isAuth ? (
         <Navigate to="/authorization" state={{ from: location }} replace />
-    ) : allowedRoles.includes(role) ? (
+    ) : !session?.role || !session?.id ? (
+        <Navigate to={'/authorization'} state={{ from: location }} replace />
+    ) : allowedRoles.includes(session.role) ? (
         <Outlet />
     ) : (
-        <Navigate to={`/${id}/profile`} state={{ from: location }} replace />
+        <Navigate to={`/${session.id}/profile`} state={{ from: location }} replace />
     );
 };
 
