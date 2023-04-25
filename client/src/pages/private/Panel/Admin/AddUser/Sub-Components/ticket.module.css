@@ -1,0 +1,74 @@
+
+.ticket_info {
+    grid-column: 1 / -1;
+}
+
+.select_ticket {
+    height: 35px;
+    padding: 0 10px;
+
+    border: 2px solid var(--main-font-color);
+    border-radius: var(--border-radius);
+    outline: none;
+
+    font-family: Inter-R, sans-serif;
+    font-size: 1em;
+}
+
+.select, .input_datetime {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.select {
+    grid-column: 4 / 8;
+}
+
+.select select {
+    width: 100%;
+}
+
+.input_datetime_start {
+    grid-column: 8 / 9;
+}
+
+
+.input_datetime_end {
+    grid-column: 9 / -1;
+}
+
+.input_datetime input {
+    height: 35px;
+    padding: 0 10px;
+
+    border: 2px solid var(--main-font-color);
+    border-radius: var(--border-radius);
+    outline: none;
+
+    font-family: Inter-R, sans-serif;
+    font-size: 1em;
+}
+
+.input_ticket {
+    grid-column: 1 / 4;
+    width: auto !important;
+}
+
+.input_ticket input {
+    border: 2px solid var(--main-font-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    padding: 5px 10px;
+
+    width: 100%;
+}
+
+.input_ticket input:disabled,
+.input_datetime_end input:disabled {
+    background-color: var(--disabled-color);
+}
+

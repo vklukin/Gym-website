@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import React from 'react';
 
 import styles from './navSideBar.module.css';
 
@@ -26,8 +27,8 @@ function PrivateLinksNavigation({ mapState, allowedRoles }: TPrivateLinksNavigat
         <ul className={styles.private_navigation}>
             {allowedRoles.includes(auth.role) &&
                 mapState.map((mapItems, mapIndex) => (
-                    <>
-                        <li key={mapIndex}>
+                    <React.Fragment key={mapIndex}>
+                        <li>
                             <a
                                 href={mapItems.link}
                                 className={cx({ active: isActiveLink(mapItems.link) })}
@@ -48,7 +49,7 @@ function PrivateLinksNavigation({ mapState, allowedRoles }: TPrivateLinksNavigat
                                     </a>
                                 </li>
                             ))}
-                    </>
+                    </React.Fragment>
                 ))}
         </ul>
     );

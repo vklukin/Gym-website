@@ -19,7 +19,7 @@ export const AdminPanel: TPrivateLinks[] = [
         link: '/panel/admin/users',
         subLinks: [
             {
-                subTitle: 'Добавить пользователя',
+                subTitle: 'Зарегистрировать клиента',
                 subLink: '/panel/admin/users/add',
             },
         ],

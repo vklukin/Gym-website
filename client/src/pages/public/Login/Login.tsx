@@ -7,7 +7,7 @@ import styles from './login.module.css';
 import { MainTag } from '../../../components/ui/Main-Tag';
 import { Button } from '../../../components/ui/Button';
 import { Validation } from '../../../components/environments/Validation';
-import { MessagesContainer } from '../../../components/environments/ToastMessage/MessagesContainer';
+import { ToastMessagesContainer } from '../../../components/environments/ToastMessage';
 import { useNavigate } from 'react-router-dom';
 
 export function Login() {
@@ -42,7 +42,7 @@ export function Login() {
 
     return (
         <MainTag navigation={false} container={false} className={styles.login}>
-            <MessagesContainer />
+            <ToastMessagesContainer />
             <form className={styles.form}>
                 <h1>Вход</h1>
                 <div className={styles.inputs}>

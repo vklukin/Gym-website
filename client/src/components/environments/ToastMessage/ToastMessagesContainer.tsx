@@ -6,7 +6,7 @@ interface IProps {
     positionX?: 'left' | 'center' | 'right';
 }
 
-export class MessagesContainer extends Component<IProps> {
+export class ToastMessagesContainer extends Component<IProps> {
     constructor(props: IProps) {
         super(props);
     }

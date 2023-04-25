@@ -12,6 +12,11 @@ type TEmailValidate = (
     emailInputRef: React.RefObject<HTMLInputElement>
 ) => boolean;
 
+type TIsInputEmpty = (
+    inputValue: string,
+    inputValueRef: React.RefObject<HTMLInputElement>
+) => boolean;
+
 export class Validation {
     static password: TPasswordValidate = (passwordInput, passwordInputRef) => {
         if (passwordInput.trim().length === 0) {
@@ -46,6 +51,17 @@ export class Validation {
         }
 
         emailInputRef.current?.classList.remove('rejectInput');
+        return true;
+    };
+
+    static isInputEmpty: TIsInputEmpty = (inputValue, inputValueRef) => {
+        if (inputValue.trim().length === 0) {
+            inputValueRef.current?.classList.add('rejectInput');
+            ToastMessage.error('Поле не должно быть пустым!');
+            return false;
+        }
+
+        inputValueRef.current?.classList.remove('rejectInput');
         return true;
     };
 }

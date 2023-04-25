@@ -13,3 +13,7 @@
     justify-content: space-between;
 }
 
+.content_wrapper {
+    width: 100%;
+    height: auto;
+}
