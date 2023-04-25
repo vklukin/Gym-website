@@ -1,14 +1,18 @@
 const jwt = require('jsonwebtoken');
 
+const { ROLE_NAMES } = require('../../constants/RoleConstant');
+
 module.exports = (roles) => {
     return (req, res, next) => {
         const { AToken } = req.cookies;
         const decode = jwt.decode(AToken);
 
-        if (roles.includes(decode.role_id)) {
-            return next();
+        if (!roles.includes(ROLE_NAMES[decode.role_id])) {
+            return res
+                .status(403)
+                .json({ message: 'У вас нет прав на совершение этого действия!' });
         }
 
-        return res.status(403).json({ message: 'У вас нет прав на совершение этого действия!' });
+        return next();
     };
 };

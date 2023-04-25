@@ -38,7 +38,6 @@ db.sequelize = sequelize;
 db.users = require('./models/Users')(sequelize);
 db.ticket = require('./models/Ticket')(sequelize);
 db.role = require('./models/Role')(sequelize);
-db.rate = require('./models/Rate')(sequelize);
 
 db.sequelize.sync();
 
@@ -46,7 +45,7 @@ db.sequelize.sync();
 //     name: 'Владислав Клюкин',
 //     email: 'vklukin1@gmail.com',
 //     password: bcrypt.hashSync('Kubi-Kitsune.7352!', 10),
-//     role_id: ROLES_NUMBERS.USER,
+//     role_id: ROLES_NUMBERS.ADMIN,
 // });
 // db.role.bulkCreate([
 //     {

@@ -64,7 +64,7 @@ export function AddUser() {
             userPassword: userPassword,
             ticket: showTicket
                 ? {
-                      ticket_id: ticket.ticket_id,
+                      ticket_id: +ticket.ticket_id,
                       ticket_rate: ticket.ticket_rate,
                       start_period: ticket.start_period,
                       end_period: ticket.end_period,
@@ -76,7 +76,10 @@ export function AddUser() {
             withCredentials: true,
         })
             .then(() => ToastMessage.success('Пользователь успешно зарегистрирован!'))
-            .catch((e) => ToastMessage.error('Произошла ошибка в регистрации: ' + e))
+            .catch((e) => {
+                console.log(e);
+                ToastMessage.error('Произошла ошибка в регистрации. ' + e.response.data.message);
+            })
             .finally(() => setIsLoading(false));
     };
 

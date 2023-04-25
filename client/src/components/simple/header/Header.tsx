@@ -11,7 +11,7 @@ import { Button } from '../../ui/Button';
 import { Links } from '../../ui/Links';
 
 export const Header: React.FC = () => {
-    const { isAuth, id } = useAppSelector((state) => state.Auth.user);
+    const { isAuth, id, role } = useAppSelector((state) => state.Auth.user);
     return (
         <header>
             <div className="container">
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
             </div>
             <nav className="nav-for-desktop">
                 <div className="container">
-                    <Links linksArray={HeaderLinks} />
+                    <Links linksArray={HeaderLinks} role={role} />
                 </div>
             </nav>
         </header>
