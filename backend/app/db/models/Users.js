@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 const Users = (sequelize) => {
     return sequelize.define('users', {
         id: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -29,8 +29,12 @@ const Users = (sequelize) => {
             defaultValue: DataTypes.NOW,
         },
         ticket_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: true,
+        },
+        status_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
     });
 };

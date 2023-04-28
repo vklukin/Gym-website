@@ -1,5 +1,5 @@
 import React from 'react';
-import { ROLES } from '../../../types/Roles';
+import { ROLES } from '../../../core/constants/Roles';
 
 type TLinks = {
     linksArray: {

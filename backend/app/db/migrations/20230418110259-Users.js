@@ -35,6 +35,10 @@ module.exports = {
                 type: DataTypes.BIGINT,
                 allowNull: true,
             },
+            status_id: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
         });
     },
 

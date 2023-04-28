@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
 
 import PrivateRoute from '../components/environments/PrivateRoutes/PrivateRoute';
-import {ROLES} from '../types/Roles';
+import {ROLES} from '../core/constants';
 import {useAppDispatch} from "../store/ReduxHooks";
 import {checkToken, insertUserData} from "../store/slices/AuthSlice";
 
@@ -20,7 +20,8 @@ import {Contacts} from '../pages/public/Contacts';
 import {Schedule} from '../pages/public/Schedule';
 import {Profile} from '../pages/private/Profile';
 import {Login} from '../pages/public/Login';
-import {AddUser, Panel} from "../pages/private/Panel";
+import {AddUser, Panel, ShowUsers} from "../pages/private/Panel";
+import {EditUser} from "../pages/private/Panel/Admin/Users/Edit/EditUser";
 
 export const Router: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -57,14 +58,15 @@ export const Router: React.FC = () => {
 
                 {/* private */}
                 <Route
-                    element={<PrivateRoute
-                        allowedRoles={[ROLES.USER, ROLES.ADMIN, ROLES.TRAINER, ROLES.MODERATOR]}/>}>
+                    element={<PrivateRoute allowedRoles={[ROLES.USER, ROLES.ADMIN, ROLES.TRAINER, ROLES.MODERATOR]}/>}>
                     <Route path="/:userId/profile" element={<Profile/>}/>
                 </Route>
                 <Route element={<PrivateRoute allowedRoles={[ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR]}/>}>
                     <Route path="/panel" element={<Panel/>}/>
                 </Route>
                 <Route element={<PrivateRoute allowedRoles={[ROLES.ADMIN, ROLES.MODERATOR]}/>}>
+                    <Route path="/panel/admin/users" element={<ShowUsers/>}/>
+                    <Route path="/panel/admin/users/:id/edit" element={<EditUser/>}/>
                     <Route path="/panel/admin/users/add" element={<AddUser/>}/>
                 </Route>
 

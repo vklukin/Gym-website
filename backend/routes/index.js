@@ -6,6 +6,9 @@ const UserLogin = require('./post/auth/Login');
 const Logout = require('./post/auth/Logout');
 const Registration = require('./post/auth/Registration');
 const CheckToken = require('./post/token/CheckToken');
+const GetUsers = require('./get/users/Users');
+const EditUser = require('./get/users/EditUser');
+const UpdateUser = require('./put/users/UpdateInfo');
 
 module.exports = (app) => {
     app.use(
@@ -17,6 +20,7 @@ module.exports = (app) => {
     app.use(bodyParser.json());
     app.use(cookieParser());
 
+    // POST
     // auth
     UserLogin(app);
     Logout(app);
@@ -24,4 +28,11 @@ module.exports = (app) => {
 
     // tokens
     CheckToken(app);
+
+    // GET
+    GetUsers(app);
+    EditUser(app);
+
+    // PUT
+    UpdateUser(app);
 };

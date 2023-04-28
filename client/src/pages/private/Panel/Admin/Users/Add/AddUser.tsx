@@ -1,22 +1,22 @@
 import classNames from 'classnames/bind';
 import React, { useRef, useState } from 'react';
-
-import styles from './add-user.module.css';
-import loginStyles from '../../../../public/Login/login.module.css';
-
-import { PrivatePanel } from '../../../../../components/simple/PrivatePanel';
-import { Button } from '../../../../../components/ui/Button';
-import { Ticket } from './Sub-Components/Ticket';
-import { TicketValidation, Validation } from '../../../../../components/environments/Validation';
 import {
     ToastMessage,
     ToastMessagesContainer,
-} from '../../../../../components/environments/ToastMessage';
-import { Api } from '../../../../../core/Api';
-import { Spinner } from '../../../../../components/ui/Spinner';
+} from '../../../../../../components/environments/ToastMessage';
+import { Api } from '../../../../../../core/Api';
+import { Spinner } from '../../../../../../components/ui/Spinner';
+import { TicketValidation, Validation } from '../../../../../../components/environments/Validation';
+
+import styles from './add-user.module.css';
+import loginStyles from '../../../../../public/Login/login.module.css';
+
+import { PrivatePanel } from '../../../../../../components/simple/PrivatePanel';
+import { Button } from '../../../../../../components/ui/Button';
+import { Ticket } from './Sub-Components/Ticket';
 
 export type TTicket = {
-    ticket_id: string | number;
+    ticket_id: number;
     ticket_rate: string;
     start_period: string;
     end_period: string;
@@ -37,7 +37,7 @@ export function AddUser() {
     const [userPassword, setUserPassword] = useState(Math.random().toString(36).slice(-10));
     const [showTicket, setShowTicket] = useState(false);
     const [ticket, setTicket] = useState<TTicket>({
-        ticket_id: '',
+        ticket_id: 0,
         ticket_rate: '',
         start_period: '',
         end_period: '',
@@ -78,7 +78,9 @@ export function AddUser() {
             .then(() => ToastMessage.success('Пользователь успешно зарегистрирован!'))
             .catch((e) => {
                 console.log(e);
-                ToastMessage.error('Произошла ошибка в регистрации. ' + e.response.data.message);
+                ToastMessage.error(
+                    `Произошла ошибка в регистрации. ${e.response.data.message || ''}`
+                );
             })
             .finally(() => setIsLoading(false));
     };
@@ -87,7 +89,7 @@ export function AddUser() {
         <PrivatePanel>
             {isLoading && <Spinner />}
             <ToastMessagesContainer />
-            <Button as={'a'} className={cx('BackButton')}>
+            <Button as={'a'} href="/panel/admin/users" className={cx('BackButton')}>
                 Вернуться назад
             </Button>
             <h2 className={cx('page_title')}>Регистрация клиента</h2>

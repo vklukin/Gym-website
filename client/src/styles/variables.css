@@ -24,6 +24,8 @@
     --gray-color: #a0a0a0;
     --darker-white: #d8d8d8;
     --reject: red;
+    --freeze: cyan;
+    --active: #06d506;
     --disabled-color: #e8e8e8;
 
     /* fonts */

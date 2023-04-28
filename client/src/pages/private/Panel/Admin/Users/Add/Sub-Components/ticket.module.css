@@ -28,7 +28,7 @@
     grid-column: 4 / 8;
 }
 
-.select select {
+.select select, .select input {
     width: 100%;
 }
 
@@ -66,9 +66,3 @@
 
     width: 100%;
 }
-
-.input_ticket input:disabled,
-.input_datetime_end input:disabled {
-    background-color: var(--disabled-color);
-}
-

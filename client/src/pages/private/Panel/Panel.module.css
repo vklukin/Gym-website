@@ -9,3 +9,32 @@
     color: var(--placeholder-color);
     width: 500px;
 }
+
+.page_hint {
+    text-align: center;
+    color: var(--placeholder-color);
+    width: 500px;
+    margin: 0 auto;
+}
+
+.BackButton {
+    background: none;
+    border: none;
+
+    font-size: .85em;
+    color: var(--gray-color);
+    cursor: pointer;
+
+    padding: 0;
+    margin-bottom: 20px;
+
+    display: inline-block;
+}
+
+.BackButton:hover {
+    color: var(--main-font-color);
+}
+
+.page_title {
+    margin-bottom: 40px;
+}

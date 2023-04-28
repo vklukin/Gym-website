@@ -10,7 +10,7 @@ import {
     TPrivateLinks,
     TrainerPanel,
 } from '../../../environments/Links';
-import { ROLES } from '../../../../types/Roles';
+import { ROLES } from '../../../../core/constants';
 
 const isActiveLink = (link: string) => window.location.pathname === link;
 

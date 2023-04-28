@@ -2,6 +2,7 @@ const { Sequelize } = require('sequelize');
 
 const DBConfig = require('../configs/db.config');
 const { ROLES_NUMBERS, ROLE_NAMES } = require('../constants/RoleConstant');
+const { STATUS, STATUS_NAMES } = require('../constants/Status');
 const bcrypt = require('bcrypt');
 
 const sequelize = new Sequelize(DBConfig.DATABASE, DBConfig.USER, DBConfig.PASSWORD, {
@@ -20,6 +21,17 @@ const sequelize = new Sequelize(DBConfig.DATABASE, DBConfig.USER, DBConfig.PASSW
         acquire: DBConfig.pool.acquire,
         idle: DBConfig.pool.idle,
     },
+    dialectOptions: {
+        useUTC: false,
+        dateStrings: true,
+        typeCast: function (field, next) {
+            if (field.type === 'DATETIME') {
+                return field.string();
+            }
+            return next();
+        },
+    },
+    timezone: '+05:00',
 });
 
 sequelize
@@ -38,6 +50,7 @@ db.sequelize = sequelize;
 db.users = require('./models/Users')(sequelize);
 db.ticket = require('./models/Ticket')(sequelize);
 db.role = require('./models/Role')(sequelize);
+db.status = require('./models/Status')(sequelize);
 
 db.sequelize.sync();
 
@@ -46,6 +59,7 @@ db.sequelize.sync();
 //     email: 'vklukin1@gmail.com',
 //     password: bcrypt.hashSync('Kubi-Kitsune.7352!', 10),
 //     role_id: ROLES_NUMBERS.ADMIN,
+//     status_id: STATUS.ACTIVE
 // });
 // db.role.bulkCreate([
 //     {
@@ -63,6 +77,20 @@ db.sequelize.sync();
 //     {
 //         id: ROLES_NUMBERS.MODERATOR,
 //         role: ROLE_NAMES[ROLES_NUMBERS.MODERATOR],
+//     },
+// ]);
+// db.status.bulkCreate([
+//     {
+//         id: STATUS.ACTIVE,
+//         role: STATUS_NAMES[STATUS.ACTIVE],
+//     },
+//     {
+//         id: STATUS.FREEZE,
+//         role: STATUS_NAMES[STATUS.FREEZE],
+//     },
+//     {
+//         id: STATUS.EXPIRED,
+//         role: STATUS_NAMES[STATUS.EXPIRED],
 //     },
 // ]);
 

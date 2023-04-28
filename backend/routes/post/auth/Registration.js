@@ -3,13 +3,14 @@ const bcrypt = require('bcrypt');
 
 const sequelize = require('../../../app/db/db');
 const { ROLE_NAMES, ROLES_NUMBERS } = require('../../../app/constants/RoleConstant');
+const { STATUS, STATUS_NAMES } = require('../../../app/constants/Status');
 const CheckToken = require('../../../app/middlewares/Auth/CheckToken');
 const CheckRole = require('../../../app/middlewares/Auth/CheckRole');
 
 module.exports = (app) => {
     app.post(
         '/api/post/auth/registration',
-        // CheckToken,
+        CheckToken(app),
         CheckRole([ROLE_NAMES[ROLES_NUMBERS.ADMIN], ROLE_NAMES[ROLES_NUMBERS.MODERATOR]]),
         async (req, res) => {
             const { userName, userEmail, userPassword, ticket } = req.body;
@@ -38,6 +39,7 @@ module.exports = (app) => {
                     password: hashedPassword,
                     role_id: ROLES_NUMBERS.USER,
                     ticket_id: +ticket.ticket_id,
+                    status_id: STATUS.ACTIVE,
                 });
 
                 await sequelize.ticket.create({
@@ -55,6 +57,7 @@ module.exports = (app) => {
                     password: hashedPassword,
                     role_id: ROLES_NUMBERS.USER,
                     ticket_id: null,
+                    status_id: STATUS.ACTIVE,
                 });
 
                 res.status(200).json({ message: 'Пользователь успешно зарегистрирован!' });

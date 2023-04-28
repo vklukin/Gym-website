@@ -1,0 +1,74 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--black);
+}
+
+.table th, .table td {
+    border: 1px solid var(--black);
+    padding: 5px;
+
+    font-size: .9em;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 10px;
+}
+
+.table td:nth-child(1).active {
+    background-color: var(--active);
+}
+
+.table td:nth-child(1).freeze {
+    background-color: var(--freeze);
+}
+
+.table td:nth-child(1).expired {
+    background-color: var(--reject);
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 45px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    min-width: 200px;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+    min-width: 170px;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+    min-width: 180px;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6) {
+    min-width: 50px;
+    max-width: 70px;
+}
+
+.table th:nth-child(7),
+.table td:nth-child(7) {
+    min-width: 130px;
+}
+
+.table th:nth-child(8),
+.table td:nth-child(8) {
+    width: 50px;
+    padding: 0;
+}
+
+.edit_button {
+    padding: 3px 5px;
+}
+
+.edit_button:hover {
+    color: var(--main-font-color);
+}

@@ -40,6 +40,7 @@
 
     border-radius: var(--border-radius);
     border: 1px solid var(--main-background-color);
+
 }
 
 .legend {
@@ -55,6 +56,7 @@
     justify-content: flex-start;
 
     gap: 10px;
+    margin-bottom: 5px;
 }
 
 .checkbox_wrapper input[type="checkbox"] {

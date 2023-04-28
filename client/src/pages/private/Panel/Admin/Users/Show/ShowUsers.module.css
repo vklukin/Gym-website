@@ -1,0 +1,17 @@
+.title_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 40px;
+}
+
+.page_title {
+    margin-bottom: 0;
+}
+
+.reg_button:hover {
+    color: var(--main-font-color);
+}

@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './ticket.module.css';
 import stylesAddUser from '../add-user.module.css';
-import loginStyles from '../../../../../public/Login/login.module.css';
+import loginStyles from '../../../../../../public/Login/login.module.css';
 import { TTicket } from '../AddUser';
 
 function plusTime(time: string, nowDate: string) {
@@ -33,6 +33,7 @@ export function Ticket({
 }: {
     ticketVal: TTicket;
     setTicket: React.Dispatch<React.SetStateAction<TTicket>>;
+    withRate?: boolean;
 }) {
     const cx = classNames.bind(styles);
     const cxArrUser = classNames.bind(stylesAddUser);
@@ -47,7 +48,7 @@ export function Ticket({
 
     useEffect(() => {
         setTicket((prev) => ({
-            ticket_id: prev.ticket_id || Date.now().toString(),
+            ticket_id: prev.ticket_id || parseInt(Date.now().toString()),
             ticket_rate: prev.ticket_rate,
             start_period: initialDateValue,
             end_period: prev.end_period,

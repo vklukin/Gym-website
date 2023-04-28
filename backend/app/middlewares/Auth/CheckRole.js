@@ -4,8 +4,8 @@ const { ROLE_NAMES } = require('../../constants/RoleConstant');
 
 module.exports = (roles) => {
     return (req, res, next) => {
-        const { AToken } = req.cookies;
-        const decode = jwt.decode(AToken);
+        const { RToken } = req.cookies;
+        const decode = jwt.decode(RToken);
 
         if (!roles.includes(ROLE_NAMES[decode.role_id])) {
             return res

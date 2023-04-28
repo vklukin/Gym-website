@@ -47,17 +47,15 @@ module.exports = (app) => {
                 });
             }
 
-            setTimeout(() => {
-                if (decode) {
-                    return res.status(200).send({
-                        id: decode.id,
-                        name: decode.name,
-                        email: decode.email,
-                        role: ROLE_NAMES[decode.role_id],
-                        createAt: decode.createAt,
-                    });
-                }
-            });
+            if (decode) {
+                return res.status(200).send({
+                    id: decode.id,
+                    name: decode.name,
+                    email: decode.email,
+                    role: ROLE_NAMES[decode.role_id],
+                    createAt: decode.createAt,
+                });
+            }
         });
     });
 };

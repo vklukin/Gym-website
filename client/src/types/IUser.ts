@@ -1,5 +1,5 @@
 export interface IUser {
-    user: TUserParams;
+    user: TUserParams & { isAuth?: boolean };
     isLoading: boolean;
     error: string | null | undefined;
 }
@@ -10,7 +10,7 @@ export type TUserParams = {
     email: string;
     createAt: string;
     role: string;
-    isAuth: boolean;
+    status: string;
     ticket?: {
         ticket_id: number;
         ticket_rate: string;
