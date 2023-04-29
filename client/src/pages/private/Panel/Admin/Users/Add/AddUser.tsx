@@ -1,9 +1,6 @@
 import classNames from 'classnames/bind';
 import React, { useRef, useState } from 'react';
-import {
-    ToastMessage,
-    ToastMessagesContainer,
-} from '../../../../../../components/environments/ToastMessage';
+import { ToastMessage } from '../../../../../../components/environments/ToastMessage';
 import { Api } from '../../../../../../core/Api';
 import { Spinner } from '../../../../../../components/ui/Spinner';
 import { TicketValidation, Validation } from '../../../../../../components/environments/Validation';
@@ -14,6 +11,7 @@ import loginStyles from '../../../../../public/Login/login.module.css';
 import { PrivatePanel } from '../../../../../../components/simple/PrivatePanel';
 import { Button } from '../../../../../../components/ui/Button';
 import { Ticket } from './Sub-Components/Ticket';
+import { LabelPanel } from '../../../../../../components/ui/PrivatePanelLabel/LabelPanel';
 
 export type TTicket = {
     ticket_id: number;
@@ -88,11 +86,7 @@ export function AddUser() {
     return (
         <PrivatePanel>
             {isLoading && <Spinner />}
-            <ToastMessagesContainer />
-            <Button as={'a'} href="/panel/admin/users" className={cx('BackButton')}>
-                Вернуться назад
-            </Button>
-            <h2 className={cx('page_title')}>Регистрация клиента</h2>
+            <LabelPanel link="/panel/admin/users">Регистрация клиента</LabelPanel>
             <form className={cx('registration_form')}>
                 <div className={cx('user_info', loginStyles.inputs)}>
                     <div className={cx('input_name', cxLogin('input_password'))}>

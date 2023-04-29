@@ -34,7 +34,7 @@ export function ShowUsers() {
                 <h2 className={cxPanel('page_title', cx('page_title'))}>
                     Управление пользователями
                 </h2>
-                <Button as="a" href="/panel/admin/users/add" className={cxPanel('reg_button')}>
+                <Button as="a" href="/panel/admin/users/add" className={cx('reg_button')}>
                     Зарегистрировать клиента
                 </Button>
             </div>

@@ -20,8 +20,7 @@ import {Contacts} from '../pages/public/Contacts';
 import {Schedule} from '../pages/public/Schedule';
 import {Profile} from '../pages/private/Profile';
 import {Login} from '../pages/public/Login';
-import {AddUser, Panel, ShowUsers} from "../pages/private/Panel";
-import {EditUser} from "../pages/private/Panel/Admin/Users/Edit/EditUser";
+import {AddUser, AddWorkout, EditUser, Panel, ShowUsers, TrainerSchedule} from "../pages/private/Panel";
 
 export const Router: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -64,12 +63,15 @@ export const Router: React.FC = () => {
                 <Route element={<PrivateRoute allowedRoles={[ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR]}/>}>
                     <Route path="/panel" element={<Panel/>}/>
                 </Route>
+                <Route element={<PrivateRoute allowedRoles={[ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR]}/>}>
+                    <Route path="/panel/trainer/schedule" element={<TrainerSchedule/>}/>
+                    <Route path="/panel/trainer/schedule/add" element={<AddWorkout/>}/>
+                </Route>
                 <Route element={<PrivateRoute allowedRoles={[ROLES.ADMIN, ROLES.MODERATOR]}/>}>
                     <Route path="/panel/admin/users" element={<ShowUsers/>}/>
                     <Route path="/panel/admin/users/:id/edit" element={<EditUser/>}/>
                     <Route path="/panel/admin/users/add" element={<AddUser/>}/>
                 </Route>
-
             </Routes>
             <Footer/>
         </>

@@ -11,6 +11,12 @@ export const TrainerPanel: TPrivateLinks[] = [
     {
         title: 'Расписание тренера',
         link: '/panel/trainer/schedule',
+        subLinks: [
+            {
+                subTitle: 'Добавить тренеровку',
+                subLink: '/panel/trainer/schedule/add',
+            },
+        ],
     },
 ];
 export const AdminPanel: TPrivateLinks[] = [

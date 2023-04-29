@@ -51,16 +51,10 @@ db.users = require('./models/Users')(sequelize);
 db.ticket = require('./models/Ticket')(sequelize);
 db.role = require('./models/Role')(sequelize);
 db.status = require('./models/Status')(sequelize);
+db.workouts = require('./models/Workouts')(sequelize);
 
 db.sequelize.sync();
 
-// db.users.create({
-//     name: 'Владислав Клюкин',
-//     email: 'vklukin1@gmail.com',
-//     password: bcrypt.hashSync('Kubi-Kitsune.7352!', 10),
-//     role_id: ROLES_NUMBERS.ADMIN,
-//     status_id: STATUS.ACTIVE
-// });
 // db.role.bulkCreate([
 //     {
 //         id: ROLES_NUMBERS.USER,
@@ -91,6 +85,49 @@ db.sequelize.sync();
 //     {
 //         id: STATUS.EXPIRED,
 //         role: STATUS_NAMES[STATUS.EXPIRED],
+//     },
+// ]);
+// db.users.bulkCreate([
+//     {
+//         name: 'Владислав Клюкин',
+//         email: 'vklukin1@gmail.com',
+//         password: bcrypt.hashSync('Kubi-Kitsune.7352!', 10),
+//         role_id: ROLES_NUMBERS.ADMIN,
+//         status_id: STATUS.ACTIVE,
+//     },
+//     {
+//         name: 'Маргарита Ионкина',
+//         email: 'vklukin23@gmail.com',
+//         password: bcrypt.hashSync('Kubi-Kitsune.7352!', 10),
+//         role_id: ROLES_NUMBERS.TRAINER,
+//         status_id: STATUS.ACTIVE,
+//     },
+//     {
+//         name: 'Евгение Клюкин',
+//         email: 'mertisgt@gmail.com',
+//         password: bcrypt.hashSync('Rkrby1475321', 10),
+//         role_id: ROLES_NUMBERS.USER,
+//         status_id: STATUS.ACTIVE,
+//     },
+// ]);
+// db.workouts.bulkCreate([
+//     {
+//         trainer_id: 2,
+//         user_id: 3,
+//         workout_time: '2023.05.07 13:30:00',
+//         workout_price: '1900',
+//     },
+//     {
+//         trainer_id: 2,
+//         noname_user: 'Клюкина Екатерина',
+//         workout_time: '2023.04.28 13:30:00',
+//         workout_price: '1900',
+//     },
+//     {
+//         trainer_id: 2,
+//         noname_user: 'Клюкина Екатерина',
+//         workout_time: '2023.04.29 21:00:00',
+//         workout_price: '1900',
 //     },
 // ]);
 

@@ -6,9 +6,14 @@ const UserLogin = require('./post/auth/Login');
 const Logout = require('./post/auth/Logout');
 const Registration = require('./post/auth/Registration');
 const CheckToken = require('./post/token/CheckToken');
+
 const GetUsers = require('./get/users/Users');
 const EditUser = require('./get/users/EditUser');
+const Workouts = require('./get/workouts/workouts');
+
 const UpdateUser = require('./put/users/UpdateInfo');
+
+const DeleteWorkout = require('./delete/workouts/DeleteWorkout');
 
 module.exports = (app) => {
     app.use(
@@ -32,7 +37,11 @@ module.exports = (app) => {
     // GET
     GetUsers(app);
     EditUser(app);
+    Workouts(app);
 
     // PUT
     UpdateUser(app);
+
+    // DELETE
+    DeleteWorkout(app);
 };

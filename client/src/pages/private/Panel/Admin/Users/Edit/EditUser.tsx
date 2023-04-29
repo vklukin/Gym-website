@@ -3,13 +3,11 @@ import { useParams } from 'react-router-dom';
 import ClassNames from 'classnames/bind';
 import { useAppDispatch, useAppSelector } from '../../../../../../store/ReduxHooks';
 import { getUser } from '../../../../../../store/slices/GetUserSlice';
-import {
-    ToastMessage,
-    ToastMessagesContainer,
-} from '../../../../../../components/environments/ToastMessage';
+import { ToastMessage } from '../../../../../../components/environments/ToastMessage';
 import { Status } from '../../../../../../core/constants';
 import { TicketValidation, Validation } from '../../../../../../components/environments/Validation';
 import { Api } from '../../../../../../core/Api';
+import { LabelPanel } from '../../../../../../components/ui/PrivatePanelLabel/LabelPanel';
 
 import panelStyles from '../../../Panel.module.css';
 import addUserStyles from '../Add/add-user.module.css';
@@ -65,8 +63,6 @@ export function EditUser() {
         }
     }, [userData]);
 
-    console.log(userData);
-
     const makeValidate = () => {
         if (!Validation.isInputEmpty(userName, userNameRef)) return;
         if (!Validation.email(userEmail, userEmailRef)) return;
@@ -107,11 +103,7 @@ export function EditUser() {
     return (
         <PrivatePanel>
             {isLoading && <Spinner />}
-            <ToastMessagesContainer />
-            <Button as={'a'} href="/panel/admin/users" className={cxPanel('BackButton')}>
-                Вернуться назад
-            </Button>
-            <h2 className={cxPanel('page_title')}>Редактирование клиента</h2>
+            <LabelPanel link="/panel/admin/users">Редактирование клиента</LabelPanel>
             {userData.id ? (
                 <>
                     <form className={cxAddUsers('registration_form')}>
