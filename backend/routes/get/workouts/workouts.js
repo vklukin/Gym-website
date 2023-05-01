@@ -46,12 +46,9 @@ module.exports = (app) => {
 
                 if (record.user_id) {
                     await sequelize.sequelize
-                        .query(
-                            `SELECT name FROM users WHERE role_id = '${ROLES_NUMBERS.USER}' AND id = '${record.user_id}'`,
-                            {
-                                type: QueryTypes.SELECT,
-                            }
-                        )
+                        .query(`SELECT name FROM users WHERE id = '${record.user_id}'`, {
+                            type: QueryTypes.SELECT,
+                        })
                         .then((data) => {
                             client = data[0].name;
                         });

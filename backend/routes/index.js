@@ -6,14 +6,14 @@ const UserLogin = require('./post/auth/Login');
 const Logout = require('./post/auth/Logout');
 const Registration = require('./post/auth/Registration');
 const CheckToken = require('./post/token/CheckToken');
-
+const AddRecord = require('./post/trainerSchedule/AddRecord');
 const GetUsers = require('./get/users/Users');
 const EditUser = require('./get/users/EditUser');
 const Workouts = require('./get/workouts/workouts');
-
 const UpdateUser = require('./put/users/UpdateInfo');
-
 const DeleteWorkout = require('./delete/workouts/DeleteWorkout');
+const Trainers = require('./get/trainers/Trainers');
+const UsersForTrainers = require('./get/users/UsersForTrainers');
 
 module.exports = (app) => {
     app.use(
@@ -34,10 +34,15 @@ module.exports = (app) => {
     // tokens
     CheckToken(app);
 
+    // workout
+    AddRecord(app);
+
     // GET
     GetUsers(app);
     EditUser(app);
     Workouts(app);
+    Trainers(app);
+    UsersForTrainers(app);
 
     // PUT
     UpdateUser(app);

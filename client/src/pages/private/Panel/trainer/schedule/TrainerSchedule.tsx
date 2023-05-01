@@ -25,7 +25,7 @@ export function TrainerSchedule() {
     const cx = ClassNames.bind(styles);
     const cxPanel = ClassNames.bind(panelStyles);
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [workoutsData, setWorkoutsData] = useState<TWorkoutsData[]>([]);
     const [expiredWorkoutsData, setExpiredWorkoutsData] = useState<TWorkoutsData[]>([]);
 
@@ -71,9 +71,7 @@ export function TrainerSchedule() {
                 setWorkoutsData(data.data);
             })
             .catch((e) => {
-                ToastMessage.error(
-                    `Произошла ошибка с получением данных. ${e.response.message || ''}`
-                );
+                ToastMessage.error(`Произошла ошибка с получением данных`);
             })
             .finally(() => {
                 setIsLoading(false);

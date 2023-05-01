@@ -9,6 +9,7 @@
     background-color: var(--second-color);
 
     transition: background-color 0.1s ease-in, color .1s ease-in;
+    position: relative;
 }
 
 .anchor-button:hover {

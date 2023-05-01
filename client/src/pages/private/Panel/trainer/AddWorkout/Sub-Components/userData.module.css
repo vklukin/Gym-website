@@ -1,0 +1,40 @@
+.search_list {
+    border: 1px solid var(--main-font-color);
+    border-radius: var(--border-radius);
+
+    border-top-color: transparent;
+
+    position: absolute;
+    z-index: 200;
+
+    bottom: 0;
+    left: 0;
+    transform: translateY(97%);
+
+    width: 100%;
+    padding: 10px 0;
+
+    max-height: 208px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.search_list li {
+    width: 100%;
+
+    user-select: none;
+    transition: background-color .1s ease-in;
+}
+
+.search_list li:hover {
+    background-color: var(--darker-white);
+}
+
+.search_list .li_click {
+    padding: 5px 10px;
+}

@@ -17,6 +17,8 @@ type TIsInputEmpty = (
     inputValueRef: React.RefObject<HTMLInputElement>
 ) => boolean;
 
+type TSelect = (select: number, selectRef: React.RefObject<HTMLSelectElement>) => boolean;
+
 export class Validation {
     static password: TPasswordValidate = (passwordInput, passwordInputRef) => {
         if (passwordInput.trim().length === 0) {
@@ -62,6 +64,17 @@ export class Validation {
         }
 
         inputValueRef.current?.classList.remove('rejectInput');
+        return true;
+    };
+
+    static select: TSelect = (select, selectRef) => {
+        if (select == 0) {
+            selectRef.current?.classList.add('rejectInput');
+            ToastMessage.error('Выберите поле тренера!');
+            return false;
+        }
+
+        selectRef.current?.classList.remove('rejectInput');
         return true;
     };
 }

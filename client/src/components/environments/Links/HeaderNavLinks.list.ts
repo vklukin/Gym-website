@@ -10,7 +10,7 @@ export const HeaderLinks: TLinks[] = [
         link: '/stocks',
     },
     {
-        title: 'Прайс',
+        title: 'Цены',
         link: '/price',
     },
     {
