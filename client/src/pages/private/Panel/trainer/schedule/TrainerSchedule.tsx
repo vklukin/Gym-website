@@ -13,7 +13,7 @@ import { PrivatePanel } from '../../../../../components/simple/PrivatePanel';
 import { Spinner } from '../../../../../components/ui/Spinner';
 import { Button } from '../../../../../components/ui/Button';
 
-type TWorkoutsData = {
+export type TWorkoutsData = {
     id: string;
     trainer_name: string;
     user_name: string;

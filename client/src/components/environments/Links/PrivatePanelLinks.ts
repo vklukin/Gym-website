@@ -9,12 +9,16 @@ export type TPrivateLinks = TLinks & {
 
 export const TrainerPanel: TPrivateLinks[] = [
     {
-        title: 'Расписание тренера',
+        title: 'Расписание тренеров',
         link: '/panel/trainer/schedule',
         subLinks: [
             {
                 subTitle: 'Добавить тренеровку',
                 subLink: '/panel/trainer/schedule/add',
+            },
+            {
+                subTitle: 'Расписание одного тренера',
+                subLink: '/panel/trainer/schedule/solo',
             },
         ],
     },

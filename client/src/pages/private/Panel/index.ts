@@ -6,3 +6,4 @@ export * from './Admin/Users/Edit/EditUser';
 
 export * from './trainer/schedule/TrainerSchedule';
 export * from './trainer/AddWorkout/AddWorkout';
+export * from './trainer/SoloTrainer/SoloTrainer';

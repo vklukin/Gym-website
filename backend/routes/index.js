@@ -14,6 +14,7 @@ const UpdateUser = require('./put/users/UpdateInfo');
 const DeleteWorkout = require('./delete/workouts/DeleteWorkout');
 const Trainers = require('./get/trainers/Trainers');
 const UsersForTrainers = require('./get/users/UsersForTrainers');
+const TrainerWorkouts = require('./get/workouts/TrainerWorkouts');
 
 module.exports = (app) => {
     app.use(
@@ -43,6 +44,7 @@ module.exports = (app) => {
     Workouts(app);
     Trainers(app);
     UsersForTrainers(app);
+    TrainerWorkouts(app);
 
     // PUT
     UpdateUser(app);
