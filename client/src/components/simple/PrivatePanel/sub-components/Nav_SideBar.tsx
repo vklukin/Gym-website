@@ -14,18 +14,22 @@ import { ROLES } from '../../../../core/constants';
 
 const isActiveLink = (link: string) => window.location.pathname === link;
 
-type TPrivateLinksNavigation = {
+export type TPrivateLinksNavigation = {
     mapState: TPrivateLinks[];
     allowedRoles: string[];
 };
 
-function PrivateLinksNavigation({ mapState, allowedRoles }: TPrivateLinksNavigation): JSX.Element {
+export function PrivateLinksNavigation({
+    mapState,
+    allowedRoles,
+}: TPrivateLinksNavigation): JSX.Element {
     const auth: TUserParams = JSON.parse(window.localStorage.getItem('Auth-Session') as string);
     const cx = classNames.bind(styles);
 
     return (
         <ul className={styles.private_navigation}>
-            {allowedRoles.includes(auth.role) &&
+            {auth &&
+                allowedRoles.includes(auth.role) &&
                 mapState.map((mapItems, mapIndex) => (
                     <React.Fragment key={mapIndex}>
                         <li>

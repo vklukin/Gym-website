@@ -22,7 +22,7 @@ export function Login() {
     const passwordInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        if (typeof auth.id === 'number') {
+        if (auth.isAuth) {
             navigate(`/${auth.id}/profile`);
         }
     }, [auth]);

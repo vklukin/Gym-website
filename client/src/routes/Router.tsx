@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
 
 import PrivateRoute from '../components/environments/PrivateRoutes/PrivateRoute';
+import NavigateToPrivateLink from "../pages/public/NavigateToPrivateLink/NavigateToPrivateLink";
 import {ROLES} from '../core/constants';
 import {useAppDispatch} from "../store/ReduxHooks";
 import {checkToken, insertUserData} from "../store/slices/AuthSlice";
@@ -25,9 +26,9 @@ import {AddUser, AddWorkout, EditUser, Panel, ShowUsers, SoloTrainer, TrainerSch
 export const Router: React.FC = () => {
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        const session = window.localStorage.getItem('Auth-Session');
+    const session = window.localStorage.getItem('Auth-Session');
 
+    useEffect(() => {
         if (!window.sessionStorage.getItem('SendQuery')) {
             dispatch(checkToken());
             window.sessionStorage.setItem('SendQuery', 'Sended')
@@ -54,8 +55,15 @@ export const Router: React.FC = () => {
                 <Route path="/contacts" element={<Contacts/>}/>
                 <Route path="/schedule" element={<Schedule/>}/>
                 <Route path="/authorization" element={<Login/>}/>
+                <Route path="*" element={<Login/>}/>
 
                 {/* private */}
+
+                <Route
+                    element={<PrivateRoute allowedRoles={[ROLES.USER, ROLES.ADMIN, ROLES.TRAINER, ROLES.MODERATOR]}/>}>
+                    <Route path="/profile" element={<NavigateToPrivateLink
+                        link={session ? `/${JSON.parse(session).id}/profile` : '*'}/>}/>
+                </Route>
                 <Route
                     element={<PrivateRoute allowedRoles={[ROLES.USER, ROLES.ADMIN, ROLES.TRAINER, ROLES.MODERATOR]}/>}>
                     <Route path="/:userId/profile" element={<Profile/>}/>

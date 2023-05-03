@@ -6,7 +6,7 @@ const PrivateRoute = ({ allowedRoles }: TAllowedRoles): JSX.Element => {
     const session = JSON.parse(window.localStorage.getItem('Auth-Session') as string);
     const location = useLocation();
 
-    return !session?.isAuth ? (
+    return !session || !session?.isAuth ? (
         <Navigate to="/authorization" state={{ from: location }} replace />
     ) : !session?.role || !session?.id ? (
         <Navigate to={'/authorization'} state={{ from: location }} replace />

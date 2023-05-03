@@ -1,0 +1,81 @@
+.exit_modal {
+    position: absolute;
+    z-index: 99999;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exit_modal_bg {
+    background-color: var(--half-opacity-black);
+
+    position: absolute;
+    z-index: 10000;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_wrapper {
+    z-index: 11111;
+
+    padding: 50px;
+
+    height: auto;
+    width: auto;
+
+    background-color: var(--white);
+
+    border-radius: var(--border-radius);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.exit_buttons_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.exit_button {
+    width: 200px;
+
+    cursor: pointer;
+}
+
+.exit_button:hover {
+    color: var(--main-font-color);
+}
+
+.true_exit_button {
+    background-color: var(--dark-active);
+    border-color: var(--dark-active);
+
+    color: var(--white);
+    font-family: Inter-M, sans-serif;
+    font-size: 1.1em;
+}
+
+.false_exit_button {
+    background-color: var(--dark-reject);
+    border-color: var(--dark-reject);
+
+    color: var(--white);
+    font-family: Inter-M, sans-serif;
+    font-size: 1.1em;
+}

@@ -105,7 +105,8 @@ const authSlice = createSlice({
             .addCase(checkToken.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-                window.localStorage.removeItem('Auth-Session');
+                window.localStorage.clear();
+                window.sessionStorage.clear();
                 console.log(state.error);
             })
             .addCase(logout.pending, (state) => {
@@ -115,7 +116,8 @@ const authSlice = createSlice({
             .addCase(logout.fulfilled, (state) => {
                 state.isLoading = false;
                 state.user = initialState.user;
-                window.localStorage.removeItem('Auth-Session');
+                window.localStorage.clear();
+                window.sessionStorage.clear();
             })
             .addCase(logout.rejected, (state, action) => {
                 state.isLoading = false;

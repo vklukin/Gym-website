@@ -5,5 +5,17 @@ export enum ROLES {
     MODERATOR = 'moderator',
 }
 
-export const RolesArray = [ROLES.USER, ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR];
 export const PrivateRoles = [ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR];
+
+export function roleInRus(role: string) {
+    switch (role) {
+        case ROLES.USER:
+            return 'Пользователь';
+        case ROLES.TRAINER:
+            return 'Тренер';
+        case ROLES.ADMIN:
+            return 'Администратор';
+        case ROLES.MODERATOR:
+            return 'Модератор';
+    }
+}
