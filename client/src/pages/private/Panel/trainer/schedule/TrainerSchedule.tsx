@@ -14,7 +14,7 @@ import { Spinner } from '../../../../../components/ui/Spinner';
 import { Button } from '../../../../../components/ui/Button';
 
 export type TWorkoutsData = {
-    id: string;
+    id: string | number;
     trainer_name: string;
     user_name: string;
     workout_time: string;

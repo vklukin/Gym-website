@@ -19,9 +19,10 @@ import {Massage} from '../pages/public/Massage';
 import {Price} from '../pages/public/Price';
 import {Contacts} from '../pages/public/Contacts';
 import {Schedule} from '../pages/public/Schedule';
-import {Profile} from '../pages/private/Profile';
+import {Profile, WorkoutsHistory} from '../pages/private/Profile';
 import {Login} from '../pages/public/Login';
 import {AddUser, AddWorkout, EditUser, Panel, ShowUsers, SoloTrainer, TrainerSchedule} from "../pages/private/Panel";
+import {WorkoutsAwaiting} from "../pages/private/Profile/WorkoutsAwaiting/WorkoutsAwaiting";
 
 export const Router: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -29,7 +30,7 @@ export const Router: React.FC = () => {
     const session = window.localStorage.getItem('Auth-Session');
 
     useEffect(() => {
-        if (!window.sessionStorage.getItem('SendQuery')) {
+        if (!window.sessionStorage.getItem('SendQuery') || !window.localStorage.getItem('Auth-Session')) {
             dispatch(checkToken());
             window.sessionStorage.setItem('SendQuery', 'Sended')
         }
@@ -67,6 +68,9 @@ export const Router: React.FC = () => {
                 <Route
                     element={<PrivateRoute allowedRoles={[ROLES.USER, ROLES.ADMIN, ROLES.TRAINER, ROLES.MODERATOR]}/>}>
                     <Route path="/:userId/profile" element={<Profile/>}/>
+                    <Route path="/:userId/workouts/await" element={<WorkoutsAwaiting/>}/>
+                    <Route path="/:userId/workouts/history" element={<WorkoutsHistory/>}/>
+                    <Route path="/:userId/settings" element={<Profile/>}/>
                 </Route>
                 <Route element={<PrivateRoute allowedRoles={[ROLES.TRAINER, ROLES.ADMIN, ROLES.MODERATOR]}/>}>
                     <Route path="/panel" element={<Panel/>}/>
