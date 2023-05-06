@@ -17,8 +17,11 @@ export const authorize = createAsyncThunk<TUserParams, TUserData, { rejectValue:
             });
 
             return await response.data;
-        } catch (e) {
-            return rejectWithValue(`Server error. ${e}`);
+        } catch (e: any) {
+            if (!e.response) {
+                throw e;
+            }
+            return rejectWithValue(e.response.data.message);
         }
     }
 );
@@ -30,8 +33,11 @@ export const logout = createAsyncThunk<void, undefined, { rejectValue: string }>
             await Api.post(`${ServerURI}/api/post/auth/logout`, _, {
                 withCredentials: true,
             });
-        } catch (e) {
-            return rejectWithValue(`Server error. ${e}`);
+        } catch (e: any) {
+            if (!e.response) {
+                throw e;
+            }
+            return rejectWithValue(e.response.data.message);
         }
     }
 );
@@ -45,8 +51,11 @@ export const checkToken = createAsyncThunk<TUserParams, undefined, { rejectValue
             });
 
             return await response.data;
-        } catch (e) {
-            return rejectWithValue(`Server error. ${e}`);
+        } catch (e: any) {
+            if (!e.response) {
+                throw e;
+            }
+            return rejectWithValue(e.response.data.message);
         }
     }
 );
@@ -90,6 +99,7 @@ const authSlice = createSlice({
             .addCase(authorize.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
+                window.localStorage.clear();
                 console.log(state.error);
             })
             .addCase(checkToken.pending, (state) => {

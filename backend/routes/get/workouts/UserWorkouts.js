@@ -10,6 +10,7 @@ module.exports = (app) => {
         '/api/get/workouts/user',
         CheckToken(app),
         CheckRole([
+            ROLE_NAMES[ROLES_NUMBERS.USER],
             ROLE_NAMES[ROLES_NUMBERS.TRAINER],
             ROLE_NAMES[ROLES_NUMBERS.ADMIN],
             ROLE_NAMES[ROLES_NUMBERS.MODERATOR],

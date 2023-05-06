@@ -7,7 +7,10 @@ import styles from './login.module.css';
 import { MainTag } from '../../../components/ui/Main-Tag';
 import { Button } from '../../../components/ui/Button';
 import { Validation } from '../../../components/environments/Validation';
-import { ToastMessagesContainer } from '../../../components/environments/ToastMessage';
+import {
+    ToastMessage,
+    ToastMessagesContainer,
+} from '../../../components/environments/ToastMessage';
 import { useNavigate } from 'react-router-dom';
 
 export function Login() {
@@ -36,8 +39,12 @@ export function Login() {
         handleAuth();
     };
 
-    function handleAuth() {
-        dispatch(authorize({ email, password }));
+    async function handleAuth() {
+        await dispatch(authorize({ email, password })).then((data) => {
+            if (typeof data.payload === 'string') {
+                return ToastMessage.error(data.payload);
+            }
+        });
     }
 
     return (

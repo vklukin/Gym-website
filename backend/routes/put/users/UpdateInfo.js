@@ -1,11 +1,18 @@
 const sequelize = require('../../../app/db/db');
-const { ROLES_NUMBERS } = require('../../../app/constants/RoleConstant');
 const { STATUS } = require('../../../app/constants/Status');
+const { QueryTypes } = require('sequelize');
 
 module.exports = (app) => {
     app.put('/api/put/users/:id', async (req, res) => {
         const { userName, userEmail, ticket, freezeUser } = req.body;
         const { id } = req.params;
+
+        const isExistEmail = await sequelize.sequelize.query(
+            `SELECT id FROM users where email = '${userEmail}'`,
+            { type: QueryTypes.SELECT }
+        );
+        if (isExistEmail.length > 0)
+            return res.status(400).json({ message: 'Такая почта уже существует!' });
 
         if (ticket) {
             await sequelize.users.update(

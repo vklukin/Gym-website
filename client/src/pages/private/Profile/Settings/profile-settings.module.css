@@ -1,0 +1,20 @@
+.change_props__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 20px;
+}
+
+.change_props__list li,
+.change_props__list li > a {
+    min-width: 100px;
+}
+
+.change_props__list li {
+    height: auto;
+}
+
+.change_props__list li > a:hover {
+    color: var(--main-font-color);
+}

@@ -16,6 +16,7 @@ const Trainers = require('./get/trainers/Trainers');
 const UsersForTrainers = require('./get/users/UsersForTrainers');
 const TrainerWorkouts = require('./get/workouts/TrainerWorkouts');
 const UserWorkouts = require('./get/workouts/UserWorkouts');
+const ChangeUserProps = require('./put/users/ChangeUserProps');
 
 module.exports = (app) => {
     app.use(
@@ -28,15 +29,10 @@ module.exports = (app) => {
     app.use(cookieParser());
 
     // POST
-    // auth
     UserLogin(app);
     Logout(app);
     Registration(app);
-
-    // tokens
     CheckToken(app);
-
-    // workout
     AddRecord(app);
 
     // GET
@@ -50,6 +46,7 @@ module.exports = (app) => {
 
     // PUT
     UpdateUser(app);
+    ChangeUserProps(app);
 
     // DELETE
     DeleteWorkout(app);

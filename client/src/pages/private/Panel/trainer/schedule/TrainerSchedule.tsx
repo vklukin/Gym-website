@@ -87,7 +87,7 @@ export function TrainerSchedule() {
             </Button>
             <div className={cx('title_wrapper')}>
                 <h2 className={cxPanel('page_title', cx('page_title'))}>Расписание тренера</h2>
-                <Button as="a" href="/panel/admin/users/add" className={cx('reg_button')}>
+                <Button as="a" href="/panel/trainer/schedule/add" className={cx('reg_button')}>
                     Добавить запись
                 </Button>
             </div>
